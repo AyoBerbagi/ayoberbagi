@@ -6,10 +6,7 @@
           <div class= "col-md-3">
             <div id="buttons">
                 <p class="category">Ayo Berbagi
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.  </p>
+                Website yang menyalurkan bantuan kepada orang-orang yang mebutuhkan aman dan terpercaya. Dalam bentuk Donasi , Barang dan Aksi Sosial.  </p>
                 </div>
                 </div>
                 <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
@@ -48,17 +45,17 @@
 
 </body>
 <!--   Core JS Files   -->
-<script src="./assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>/assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="./assets/js/plugins/bootstrap-switch.js"></script>
+<script src="<?=base_url()?>/assets/js/plugins/bootstrap-switch.js"></script>
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
 <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-<script src="./assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="<?=base_url()?>/assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
 <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
-<script src="./assets/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
+<script src="<?=base_url()?>/assets/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 // the body of this function is in assets/js/now-ui-kit.js
@@ -74,4 +71,5 @@ if ($('.section-download').length != 0) {
 }
 }
 </script>
+
 </html>

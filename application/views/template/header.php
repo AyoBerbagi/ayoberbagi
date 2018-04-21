@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?=base_url()?>/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="<?=base_url()?>/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Ayo Berbagi</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="./assets/css/home.css" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/home.css" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="./assets/css/demo.css" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/demo.css" rel="stylesheet" />
 </head>
 
 <body class="index-page sidebar-bagi8d54a2collapse">
@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">
+                        <a class="nav-link" href="#" >
                             <i class=""></i>
                             <p>Menu</p>
                         </a>
@@ -41,10 +41,10 @@
                         </p>
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Donasi </a>
-                        <a class="dropdown-item" href="#">Berbagi Barang</a>
-                        <a class="dropdown-item" href="#">Aksi Sosial</a>
-                        <a class="dropdown-item" href="#">Kampanye Baru</a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/berbagiDana">Donasi </a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/BerbagiBarang">Berbagi Barang</a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/timSukarelawan">Aksi Sosial</a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/Kampanye">Kampanye Baru</a>
                       </div>
                     </li>
                     <li class="nav-item">

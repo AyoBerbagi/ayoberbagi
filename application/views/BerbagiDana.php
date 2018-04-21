@@ -36,7 +36,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
                    <li class="nav-item">
-                        <a class="nav-link" href="<?=base_url()?>index.php/Welcome">Home</a>
+                        <a class="nav-link" href="<?=base_url()?>">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Berbagi Dana</a>
@@ -65,7 +65,7 @@
     </nav>
     <!-- End Navbar -->
     <div class="page-header" filter-color="purple">
-        <div class="page-header-image" style="background-image:url('../assets/img/donate.jpg')"></div>
+        <div class="page-header-image" style="background-image:url('<?=base_url()?>/assets/img/donate.jpg')"></div>
         <br>
         <br>
         <br>

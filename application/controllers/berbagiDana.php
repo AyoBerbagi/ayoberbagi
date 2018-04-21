@@ -20,6 +20,6 @@ class BerbagiDana extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('BerbagiDana');
+		$this->load->view('ListKampanye');
 	}
 }

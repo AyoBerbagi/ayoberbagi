@@ -18,8 +18,15 @@ class Logout extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->view('logout');
-	}
+	 public function index(){
+ 	$this->session->unset_userdata('login');
+ 	$this->session->unset_userdata('nama');
+ 	$this->session->unset_userdata('usernama');
+ 	$data = array(
+ 		'page' => 'home',
+ 		'link' => 'home'
+ 	);
+
+ 	$this->load->view('template/wrapper', $data);
+ 	}
 }

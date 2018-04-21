@@ -26,12 +26,12 @@
                     Ayo Berbagi
                 </a>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" >
+                        <a class="nav-link" href="<?=base_url()?>" >
                             <i class=""></i>
-                            <p>Menu</p>
+                            <p>Home</p>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
@@ -42,14 +42,14 @@
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="<?=base_url()?>index.php/berbagiDana">Donasi </a>
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/berbagiBarang">Berbagi Barang</a>
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/timSukarelawan">Aksi Sosial</a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/BerbagiBarang">Berbagi Barang</a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/Aksisosial">Aksi Sosial</a>
                         <a class="dropdown-item" href="<?=base_url()?>index.php/Kampanye">Kampanye Baru</a>
                       </div>
                     </li>
                     <li class="nav-item">
                       <div class="">
-                        <a class="nav-link" href="<?=base_url()?>index.php/login"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Login</a>
+                        <a class="nav-link" href="<?=base_url()?>index.php/LogIn"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log In</a>
                       </div>
                     </li>
                     </ul>
@@ -60,7 +60,7 @@
     <!-- End Navbar -->
     <div class="wrapper">
         <div class="page-header clear-filter" filter-color="orange">
-            <div class="page-header-image" data-parallax="true" style="background-image: url('./assets/img/teman.png');">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('<?=base_url()?>/assets/img/teman.png');">
 
             </div>
             	<br>
@@ -82,18 +82,20 @@
                                     <div class="carousel-item active">
                                         <img class="d-block" src="<?=base_url()?>assets/img/bg2.jpg" alt="First slide">
                                         <div class="carousel-caption d-none d-md-block">
+                                            <h5>Jantung Sehat Untuk Mega</h5>
+
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block" src="<?=base_url()?>assets/img/bg1.jpg" alt="Second slide">
+                                        <img class="d-block" src="<?=base_url()?>assets/img/Mega.jpg" alt="Second slide">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5>Somewhere Beyond, United States</h5>
+                                            <h5>Sedekah Anak Yatim Piatu</h5>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block" src="<?=base_url()?>assets/img/bg4.jpg" alt="Third slide">
+                                        <img class="d-block" src="<?=base_url()?>assets/img/Mega2.jpg" alt="Third slide">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5>Yellowstone National Park, United States</h5>
+                                            <h5>Aksi Sosial</h5>
                                                  </div>
                                     </div>
                                 </div>
@@ -115,12 +117,7 @@
                         <div class="col-md-12">
                             <h2 class="title">Kenapa berdonasi melalui Ayo Berbagi?</h2>
                             <h5 class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.orem
+                                Ayo Berbagi menyalurkan segala bentuk pemberian dari anda dengan mudah dan aman. Ayo Berbagi menerima bentuk bantuan anda seperti donasi, barang , dan aksi sosial untuk disalurkan kepada orang-orang yang membutuhkan. Dan juga Ayo Berbagi Menerima Informasi dari anda jika anda mengetahui orang yang sedang memerlukan bantuan, untuk di publikasikan di web kami.
                             </h5>
                           </div>
                         </div>
@@ -165,10 +162,7 @@
                 	<div class= "col-md-3">
                     <div id="buttons">
                         <p class="category">Ayo Berbagi
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.  </p>
+                        Website yang menyalurkan bantuan kepada orang-orang yang mebutuhkan aman dan terpercaya. Dalam bentuk Donasi , Barang dan Aksi Sosial.  </p>
                         </div>
                         </div>
                         <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
@@ -179,7 +173,7 @@
                         </div>
                         <div class="col-md-3 col-lg-3"><button class="btn btn-primary">Pelajari Lebih Lanjut</button>
                         <p class="category">Tentang Kami </p>
-                        <p class="category">F.A.Q </p>
+                        <p class="category"><a href="<?=base_url()?>index.php/FAQ">F.A.Q</a></p>
                         <p class="category">Bantuan </p>
                         <p class="category">Tim Sukarelawan </p>
                         </div>

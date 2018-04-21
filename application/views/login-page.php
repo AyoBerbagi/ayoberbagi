@@ -28,7 +28,7 @@
                         <a class="nav-link" href="http://ayoberbagii.000webhostapp.com">Kembali ke Home</a>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
                             <i class="fa fa-twitter"></i>
                             <p class="d-lg-none d-xl-none">Twitter</p>
@@ -45,18 +45,18 @@
                             <i class="fa fa-instagram"></i>
                             <p class="d-lg-none d-xl-none">Instagram</p>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
     <!-- End Navbar -->
     <div class="page-header" filter-color="violet">
-        <div class="page-header-image" style="background-image:url(../assets/img/login2.jpg)"></div>
+        <div class="page-header-image" style="background-image:url('<?=base_url()?>/assets/img/login.jpg')"></div>
         <div class="container">
             <div class="col-md-4 content-center">
                 <div class="card card-login card-plain">
-                    <form class="form" method="POST" action="<?=base_url()?>index.php/login/procLogin">
+                    <form class="form" method="POST" action="<?=base_url()?>index.php/login/procLogin" autocomplete="off">
                         <div class="header header-primary text-center">
                             <div class="logo-container">
                                 <img src="<?=base_url()?>/assets/img/logo coba coba.png" alt="">
