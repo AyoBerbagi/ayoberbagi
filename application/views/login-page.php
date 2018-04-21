@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
     <link href="<?=base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="<?=base_url()?>/assets/css/login.css" rel="stylesheet" />
+    <link href="../assets/css/login.css" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="<?=base_url()?>/assets/css/demo.css" rel="stylesheet" />
 </head>
@@ -21,10 +21,19 @@
 <body class="login-page sidebar-collapse">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary fixed-top " color-on-scroll="400">
-
-            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+                    Ayo Berbagi
+                </a>
+                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
                         <a class="nav-link" href="http://ayoberbagii.000webhostapp.com">Kembali ke Home</a>
                     </li>
 
