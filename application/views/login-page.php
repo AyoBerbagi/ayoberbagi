@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
     <link href="<?=base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/css/login.css" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/login.css" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="<?=base_url()?>/assets/css/demo.css" rel="stylesheet" />
 </head>
 
 <body class="login-page sidebar-collapse">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top " color-on-scroll="400">
+    <nav class="navbar navbar-expand-lg fixed-top " style="background-color: #8d54a2">
         <div class="container">
             <div class="navbar-translate">
                 <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
@@ -61,7 +61,7 @@
     </nav>
     <!-- End Navbar -->
     <div class="page-header" filter-color="violet">
-        <div class="page-header-image" style="background-image:url('<?=base_url()?>/assets/img/login.jpg')"></div>
+        <div class="page-header-image" style="background-image:url('<?=base_url()?>/assets/img/login2.jpg')"></div>
         <div class="container">
             <div class="col-md-4 content-center">
                 <div class="card card-login card-plain">
