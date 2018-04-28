@@ -21,68 +21,75 @@
 <body class="index-page sidebar-bagi8d54a2collapse">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary fixed-top " style="background-color: #8d54a2">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="http://ayoberbagii.000webhostapp.com" rel="tooltip">
-                    Ayo Berbagi
-                </a>
-                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-.jpg">
-                <ul class="navbar-nav">
-
-
+          <div class="container">
+              <div class="navbar-translate">
+                  <a class="navbar-brand" href="http://ayoberbagii.000webhostapp.com" rel="tooltip">
+                      Ayo Berbagi
+                  </a>
+              </div>
+              <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="<?=base_url()?>" >
+                              <i class=""></i>
+                              <p>Home</p>
+                          </a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <p>
+                            Bentuk Donasi
+                          </p>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" target="_blank">
-                            <i class="now-ui-icons"></i>
-                            <p>Menu</p>
-                        </a>
-                           </li>
-            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <p>
-                                                        Bentuk Donasi
-                                                    </p>
-                                                </a>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                    <a class="dropdown-item" href="#">Donasi </a>
-                                                    <a class="dropdown-item" href="#">Berbagi Barang</a>
-                                                    <a class="dropdown-item" href="#">Aksi Sosial</a>
-                                                    <a class="dropdown-item" href="#">Kampanye Baru</a>
-                                                </div>
-                                            </li>
-                                             <li class="nav-item">
-                                                <a class="nav-link" href="#pablo"><i class="now-ui-icons users_single-02" aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="<?=base_url()?>index.php/berbagiDana">Donasi </a>
+                          <a class="dropdown-item" href="<?=base_url()?>index.php/BerbagiBarang">Berbagi Barang</a>
+                          <a class="dropdown-item" href="<?=base_url()?>index.php/timSukarelawan">Aksi Sosial</a>
+                          <a class="dropdown-item" href="<?=base_url()?>index.php/Kampanye">Kampanye Baru</a>
+                        </div>
+                      </li>
+                       <!-- <li class="nav-item">
+                        <div class="">
+                          <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
+                        </div>
+                      </li> -->
+                      <?php if($this->session->has_userdata('login')){
+                        echo "<li class='nav-item dropdown'>
+                          <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                            <p>";
+                        echo $_SESSION['nama'];
+                        echo "</p>
+                          </a>
+                          <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                            <a class='dropdown-item' href='<?=base_url()?>index.php/Profil'>Profil </a>
+                            <a class='dropdown-item' href='<?=base_url()?>index.php/LogOut'>Log Out</a>
+                          </div>
+                          </li>";
+                      }else{
+                        echo "<a class='nav-link' href='".base_url()."index.php/LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>";
+                      } ?>
+                       </ul>
+                    </div>
+                  </div>
+              </nav>
 
     <!-- End Navbar -->
    <div class="section section-signup" style="background-color:white;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4" >
-                            <ul  class="nav nav-pills">
-                               <button class="btn btn-primary">
-                          <li class="active"><a href="<?=base_url()?>index.php/FAQ/panduan">Panduan Umum</a> <span class="pull-right fa fa-chevron-right"></span></li></button>
-                               <button class="btn btn-primary">
+                          <ul  class="nav nav-pills">
+                               <button class="btn btn-primary col-md-10" id="borderbox">
+                          <li ><a href="<?=base_url()?>index.php/FAQ/panduan">Panduan Umum</a> <span class="pull-right fa fa-chevron-right"></span></li></button>
+                               <button class="btn btn-primary col-md-10" id="borderbox">
                           <li><a href="<?=base_url()?>index.php/FAQ/campaigner"></a>Untuk Campaigner<span class="pull-right fa fa-chevron-right"></span></li></button>
-                               <button class="btn btn-primary">
-                          <li><a href="<?=base_url()?>index.php/FAQ"></a>Aksi Sosial<span class="pull-right fa fa-chevron-right"></span></li></button>
-                                <button class="btn btn-primary">
+                               <button class="btn btn-primary col-md-10" id="borderbox">
+                          <li class="active"><a href="<?=base_url()?>index.php/FAQ"></a>Aksi Sosial<span class="pull-right fa fa-chevron-right"></span></li></button>
+                                <button class="btn btn-primary col-md-10" id="borderbox">
                           <li><a href="<?=base_url()?>index.php/FAQ/"></a>Pencairan Dana<span class="pull-right fa fa-chevron-right"></span></li></button>
-                               <button class="btn btn-primary">
+                               <button class="btn btn-primary col-md-10" id="borderbox">
                           <li><a href="<?=base_url()?>index.php/FAQ/donatur"></a>Untuk Donatur<span class="pull-right fa fa-chevron-right"></span></li></button>
-                                <button class="btn btn-primary">
+                                <button class="btn btn-primary col-md-10" id="borderbox">
                           <li><a href="<?=base_url()?>index.php/FAQ/berbagibarang"></a>Berbagi Barang<span class="pull-right fa fa-chevron-right"></span></li></button>
                        </ul>
                         </div>

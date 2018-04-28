@@ -4049,6 +4049,10 @@ body {
 img {
     max-width: 100%;
     border-radius: 1px;
+    height: 100px;
+    width: 150px;
+    margin-top: -40px;
+    margin-bottom: -50px;
 }
 
 .img-raised {
@@ -5556,7 +5560,7 @@ Created using IcoMoon - icomoon.io
 #contentt{
     background-color: #8d54a2;
     color: white;
-    border-radius: 50px;
+    border-radius: 25px;
 }
 #contentt ,h3{
     text-align: center;
@@ -7533,4 +7537,9 @@ Created using IcoMoon - icomoon.io
         top: 50%;
         transform: translateY(-50%);
     }
+}
+
+#borderbox{
+    border-color: purple;
+    text-align: left;
 }

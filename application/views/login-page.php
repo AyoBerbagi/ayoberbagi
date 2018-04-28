@@ -34,7 +34,7 @@
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
-                        <a class="nav-link" href="http://ayoberbagii.000webhostapp.com">Kembali ke Home</a>
+                        <a class="nav-link" href="<?=base_url()?>">Kembali ke Home</a>
                     </li>
 
                     <!-- <li class="nav-item">

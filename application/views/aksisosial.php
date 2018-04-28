@@ -20,14 +20,14 @@
 
 <body class="index-page sidebar-bagi8d54a2collapse">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top ">
         <div class="container">
             <div class="navbar-translate">
                 <a class="navbar-brand" href="http://ayoberbagii.000webhostapp.com" rel="tooltip">
                     Ayo Berbagi
                 </a>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="<?=base_url()?>" >
@@ -44,26 +44,34 @@
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="<?=base_url()?>index.php/berbagiDana">Donasi </a>
                         <a class="dropdown-item" href="<?=base_url()?>index.php/BerbagiBarang">Berbagi Barang</a>
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/Aksisosial">Aksi Sosial</a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/timSukarelawan">Aksi Sosial</a>
                         <a class="dropdown-item" href="<?=base_url()?>index.php/Kampanye">Kampanye Baru</a>
                       </div>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <p>
-                          <?php echo $_SESSION['nama'];?>
-                        </p>
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/Profil">Profil </a>
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/LogOut">Log Out</a>
+                     <!-- <li class="nav-item">
+                      <div class="">
+                        <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
                       </div>
-                    </li>
-                    </ul>
+                    </li> -->
+                    <?php if($this->session->has_userdata('login')){
+                      echo "<li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                          <p>";
+                      echo $_SESSION['nama'];
+                      echo "</p>
+                        </a>
+                        <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                          <a class='dropdown-item' href='<?=base_url()?>index.php/Profil'>Profil </a>
+                          <a class='dropdown-item' href='<?=base_url()?>index.php/LogOut'>Log Out</a>
+                        </div>
+                        </li>";
+                    }else{
+                      echo "<a class='nav-link' href='".base_url()."index.php/LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>";
+                    } ?>
+                     </ul>
                   </div>
                 </div>
             </nav>
-
     <!-- End Navbar -->
    <div class="section section-signup" style="background-image: url('assets/img/bg4.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
        <div>

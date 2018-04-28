@@ -11,9 +11,9 @@ class Model extends CI_Model {
     //      return $query = $this->db->get($table, $limit, $start)->result();
     // }
     //
-    // function list_data_all($table){
-    //      return $query = $this->db->get($table);
-    // }
+    function list_data_all($table){
+         return $query = $this->db->get($table);
+    }
     //
     // function hitung($param_id, $id, $table){
     //     return $this->db->get_where($table, array($param_id => $id))->num_rows();

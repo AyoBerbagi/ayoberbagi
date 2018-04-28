@@ -20,58 +20,65 @@
 
 <body class="index-page sidebar-bagi8d54a2collapse">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top ">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
-                    Ayo Berbagi
+                <a class="navbar-brand" href="http://ayoberbagii.000webhostapp.com" rel="tooltip">
+                  <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
                 </a>
-                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                </button>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/bluerred-.jpg">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
-
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=base_url()?>" >
+                            <i class=""></i>
+                            <p>Home</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" target="_blank">
-                            <i class="now-ui-icons"></i>
-                            <p>Menu</p>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <p>
+                          Bentuk Donasi
+                        </p>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/berbagiDana">Donasi </a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/BerbagiBarang">Berbagi Barang</a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/timSukarelawan">Aksi Sosial</a>
+                        <a class="dropdown-item" href="<?=base_url()?>index.php/Kampanye">Kampanye Baru</a>
+                      </div>
+                    </li>
+                     <!-- <li class="nav-item">
+                      <div class="">
+                        <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
+                      </div>
+                    </li> -->
+                    <?php if($this->session->has_userdata('login')){
+                      echo "<li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                          <p>";
+                      echo $_SESSION['nama'];
+                      echo "</p>
                         </a>
-                           </li>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <p>
-                                                        Bentuk Donasi
-                                                    </p>
-                                                </a>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                    <a class="dropdown-item" href="#">Donasi </a>
-                                                    <a class="dropdown-item" href="#">Berbagi Barang</a>
-                                                    <a class="dropdown-item" href="#">Aksi Sosial</a>
-                                                    <a class="dropdown-item" href="#">Kampanye Baru</a>
-                                                </div>
-                                            </li>
-                                             <li class="nav-item">
-                                                <a class="nav-link" href="#pablo"><i class="now-ui-icons users_single-02" aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
+                        <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                          <a class='dropdown-item' href='<?=base_url()?>index.php/Profil'>Profil </a>
+                          <a class='dropdown-item' href='<?=base_url()?>index.php/LogOut'>Log Out</a>
+                        </div>
+                        </li>";
+                    }else{
+                      echo "<a class='nav-link' href='".base_url()."index.php/LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>";
+                    } ?>
+                     </ul>
+                  </div>
+                </div>
+            </nav>
 
     <!-- End Navbar -->
    <div class="section section-signup" style="background-image: url('<?=base_url()?>/assets/img/img5.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
                 <div class="container">
                     <div class="row">
                         <div class="card card-signup" data-background-color="violet">
-                            <form class="form" method="" action="">
+                            <form class="form" method="POST" action="<?=base_url()?>index.php/Kampanye/newKampanye" enctype="multipart/form-data">
                                 <div class="header text-center">
                                     <h4 class="title title-up">Buat Kampanye</h4>
                                 </div>
@@ -80,13 +87,14 @@
                                         <span class="input-group-addon">
                                             <i class="now-ui-icons users_circle-08"></i>
                                         </span>
-                                        <input type="text" class="form-control" placeholder="Nama Kampanye">
+                                        <input type="text" id="namaKampanye" name="namaKampanye" class="form-control" placeholder="Nama Kampanye">
                                     </div>
                                     <div class="input-group form-group-no-border">
                                         <span class="input-group-addon">
                                             <i class="now-ui-icons files_single-copy-04"></i>
                                         </span>
-                                    <textarea placeholder="Deskripsi" name="Deskripsi" rows="5" cols="10" class="form-control"> </textarea>
+                                    <textarea placeholder="Deskripsi" id="Deskripsi" name="Deskripsi" rows="5" cols="10" class="form-control"> </textarea>
+
                                         <!--input type="text" placeholder="Deskripsi" class="form-control" />
                                     </div>-->
                                     <!-- If you want to add a checkbox to this form, uncomment this code -->
@@ -97,13 +105,20 @@
                                         </label>
                                     </div> -->
                                 </div>
+                                <div class="social-line">
+                                  <h6 class="title title-up">Jenis Kampanye</h6>
+                                  <select name="jenisKampanye" class="form-control">
+                                    <option value="BD">Berbagi Dana</option>
+                                    <option value="BB">Berbagi Barang</option>
+                                    <option value="AKS">Aksi Sosial</option>
+                                  </select>
+                                </div>
+
                                 <div class="footer text-left">
-                                    <a href="#pablo" class="btn btn-neutral btn-round btn-mini">
-                                    <i class="now-ui-icons arrows-1_cloud-upload-94"></i >
-                                    Unggah file</a>
+                                    <input type="file" name="userfile" value="Unggah File" class="btn btn-neutral btn-round btn-mini">
                                 </div>
                                 <div class="footer text-center">
-                                    <a href="#pablo" class="btn btn-neutral btn-round btn-lg">Kirim</a>
+                                    <input type="submit" class="btn btn-neutral btn-round btn-lg" name="upload" value="Kirim">
                                 </div>
                             </form>
                         </div>
@@ -134,7 +149,31 @@
                         </div>
                     </div>
  -->        </div>
+ <!-- <div class="modal fade" id="change-foto-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+ <div class="modal-content">
+ <div class="modal-header">
+ <h1>Pilih file anda </h1><br>
+ <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+ </div>
+ <form class="form" action="<?=base_url()?>index.php/Kampanye/uploadfile" method="post" enctype="multipart/form-data" autocomplete="off">
+ <div class='form-group'>
+ <label>Ambil file anda </label>
+ <div class='col-xs-10'>
+   <input type="file" class='form-control' name="inputFile" accept=".gif, .jpg, .png" required />
+ </div>
+ </div>
+ <!-- <hr> -->
+ <!-- <input type="submit" name="login" class="login loginmodal-submit" value="OK"> -->
+ <!-- <div class="modal-footer">
+ <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+ <button type="submit" name="login" class="login" class="btn btn-info btn-simple">Upload</button>
+ </div>
+ </form>
 
+ </div>
+ </div>
+ </div> -->
 
         <!--  End Modal -->
         <footer class="footer" data-background-color="violet">

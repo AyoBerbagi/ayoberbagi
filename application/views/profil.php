@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
     <link href="<?=base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="<?=base_url()?>/assets/css/profil.css?v=1.1.0" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/profil.css" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="<?=base_url()?>/assets/css/demo.css" rel="stylesheet" />
 </head>
@@ -53,21 +53,69 @@
                         <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
                       </div>
                     </li> -->
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <p>
-                          <?php echo $_SESSION['nama'];?>
-                        </p>
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/Profil">Profil </a>
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/LogOut">Log Out</a>
-                      </div>
-                    </li>
-                    </ul>
+                    <?php if($this->session->has_userdata('login')){
+                      echo "<li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                          <p>";
+                      echo $_SESSION['nama'];
+                      echo "</p>
+                        </a>
+                        <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                          <a class='dropdown-item' href='<?=base_url()?>index.php/Profil'>Profil </a>
+                          <a class='dropdown-item' href='<?=base_url()?>index.php/LogOut'>Log Out</a>
+                        </div>
+                        </li>";
+                    }else{
+                      echo "<a class='nav-link' href='".base_url()."index.php/LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>";
+                    } ?>
+                     </ul>
                   </div>
                 </div>
             </nav>
+            <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+                    <img src="assets/img/ayoberbagi.png" alt="">
+                </a>
+                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+                <ul class="navbar-nav">
+
+
+                        </a>
+                    </li>
+                    <li class="nav-item" style="margin-top: -7px;">
+                        <a class="nav-link" href="" target="_blank">
+                            <i class="now-ui-icons"></i>
+                            <p>Menu</p>
+                        </a>
+                           </li>
+                                            <li class="nav-item dropdown" style="margin-top: -7px;">
+                                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <p>
+                                                        Bentuk Donasi
+                                                    </p>
+                                                </a>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                    <a class="dropdown-item" href="#">Donasi </a>
+                                                    <a class="dropdown-item" href="#">Berbagi Barang</a>
+                                                    <a class="dropdown-item" href="#">Aksi Sosial</a>
+                                                    <a class="dropdown-item" href="#">Kampanye Baru</a>
+                                                </div>
+                                            </li>
+                                             <li class="nav-item" style="margin-top: -7px;">
+                                                <a class="nav-link" href="#pablo"><i class="now-ui-icons users_single-02" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
 
     <!-- End Navbar -->
    <div class="section section-signup" style="background-image: url('<?=base_url()?>/assets/img/profil.jpg'); background-size: cover; background-position: top center; min-height: 700px;">

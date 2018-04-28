@@ -20,6 +20,19 @@ class BerbagiDana extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('ListKampanye');
+		$infoKampanye = $this->Model->list_data_all("infokampanye")->result_array();
+		$data = array(
+			'infoKampanye' => $infoKampanye,
+			'page' => 'ListKampanye',
+			'link' => 'ListKampanye'
+		);
+		$this->load->view('template/wrapper',$data);
+	}
+	function getUniqueID(){
+		#fuction to get unique ID for tbl_user
+
+			$maxID = $this->Model->maxFrom('id_kampanye','infokampanye');
+
+			return (int) $maxID;
 	}
 }
