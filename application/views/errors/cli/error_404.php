@@ -31,8 +31,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <nav class="navbar navbar-expand-lg bg-primary fixed-top" >
       <div class="container">
           <div class="navbar-translate">
-              <a class="navbar-brand" href="http://ayoberbagii.000webhostapp.com" rel="tooltip">
-                  Ayo Berbagi
+              <a class="navbar-brand" href="<?=base_url()?>" rel="tooltip">
+                <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
               </a>
           </div>
           <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
@@ -50,10 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       </p>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="<?=base_url()?>index.php/berbagiDana">Donasi </a>
-                      <a class="dropdown-item" href="<?=base_url()?>index.php/BerbagiBarang">Berbagi Barang</a>
-                      <a class="dropdown-item" href="<?=base_url()?>index.php/timSukarelawan">Aksi Sosial</a>
-                      <a class="dropdown-item" href="<?=base_url()?>index.php/Kampanye">Kampanye Baru</a>
+                      <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
+                      <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
+                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
                     </div>
                   </li>
                    <!-- <li class="nav-item">
@@ -69,18 +69,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     echo "</p>
                       </a>
                       <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
-                        <a class='dropdown-item' href='<?=base_url()?>index.php/Profil'>Profil </a>
-                        <a class='dropdown-item' href='<?=base_url()?>index.php/LogOut'>Log Out</a>
+                        <a class='dropdown-item' href='".base_url()."Profil'>Profil </a>
+                        <a class='dropdown-item' href='".base_url()."LogOut'>Log Out</a>
                       </div>
                       </li>";
                   }else{
-                    echo "<a class='nav-link' href='".base_url()."index.php/LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>";
+                    echo "<li class='nav-item'>
+                    <a class='nav-link' href='".base_url()."LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>
+                    </li>";
                   } ?>
                    </ul>
                 </div>
               </div>
           </nav>
-
     <!-- End Navbar -->
     <div class="wrapper">
              <div class="section section-nucleo-icons">
