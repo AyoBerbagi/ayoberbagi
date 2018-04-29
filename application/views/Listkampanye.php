@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="<?=base_url()?>/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Now Ui Kit by Creative Tim</title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <meta content='width=th, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
@@ -21,59 +21,59 @@
 <body class="index-page sidebar-bagi8d54a2collapse">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary fixed-top ">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="http://ayoberbagii.000webhostapp.com" rel="tooltip">
-                    <!-- <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt=""> -->
-                    Ayo Berbagi
-                </a>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?=base_url()?>" >
-                            <i class=""></i>
-                            <p>Home</p>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <p>
-                          Bentuk Donasi
-                        </p>
+      <div class="container">
+          <div class="navbar-translate">
+              <a class="navbar-brand" href="<?=base_url()?>" rel="tooltip">
+                <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
+              </a>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="<?=base_url()?>" >
+                          <i class=""></i>
+                          <p>Home</p>
                       </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/berbagiDana">Donasi </a>
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/BerbagiBarang">Berbagi Barang</a>
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/timSukarelawan">Aksi Sosial</a>
-                        <a class="dropdown-item" href="<?=base_url()?>index.php/Kampanye">Kampanye Baru</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <p>
+                        Bentuk Donasi
+                      </p>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
+                      <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
+                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
+                    </div>
+                  </li>
+                   <!-- <li class="nav-item">
+                    <div class="">
+                      <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
+                    </div>
+                  </li> -->
+                  <?php if($this->session->has_userdata('login')){
+                    echo "<li class='nav-item dropdown'>
+                      <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                        <p>";
+                    echo $_SESSION['nama'];
+                    echo "</p>
+                      </a>
+                      <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                        <a class='dropdown-item' href='".base_url()."Profil'>Profil </a>
+                        <a class='dropdown-item' href='".base_url()."LogOut'>Log Out</a>
                       </div>
-                    </li>
-                     <!-- <li class="nav-item">
-                      <div class="">
-                        <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
-                      </div>
-                    </li> -->
-                    <?php if($this->session->has_userdata('login')){
-                      echo "<li class='nav-item dropdown'>
-                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                          <p>";
-                      echo $_SESSION['nama'];
-                      echo "</p>
-                        </a>
-                        <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
-                          <a class='dropdown-item' href='<?=base_url()?>index.php/Profil'>Profil </a>
-                          <a class='dropdown-item' href='<?=base_url()?>index.php/LogOut'>Log Out</a>
-                        </div>
-                        </li>";
-                    }else{
-                      echo "<a class='nav-link' href='".base_url()."index.php/LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>";
-                    } ?>
-                     </ul>
-                  </div>
+                      </li>";
+                  }else{
+                    echo "<li class='nav-item'>
+                    <a class='nav-link' href='".base_url()."LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>
+                    </li>";
+                  } ?>
+                   </ul>
                 </div>
-            </nav>
-
+              </div>
+          </nav>
     <!-- End Navbar -->
    <div class="section section-signup" style="background-image: url('<?=base_url()?>/assets/img/diversity.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
                <!-- Marketing messaging and featurettes
@@ -84,7 +84,14 @@
 
         <div class='row'>
         <!-- Three columns of text below the carousel -->
-        <?php foreach ($infoKampanye as $key => $value) {
+        <?php
+        if($infoKampanye==null){
+          echo "
+          <div class='col-lg-6'>
+          <h2> $eror </h2><br>
+          ";
+        }else{
+          foreach ($infoKampanye as $key => $value) {
           // code...
           echo "
             <div class='col-lg-4'>
@@ -102,9 +109,10 @@
                               </div>
               <p><a class='btn btn-secondary' href='".base_url()."index.php/BerbagiDana' role='button'>Lanjut &raquo;</a></p>
             </div>";
-        } ?>
+        }}
+         ?>
         <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
+          <!-- <div class="col-lg-4">
             <img class="rounded-circle" src="<?=base_url()?>/assets/img/bg1.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>Donasi Untuk anak Gizi Buruk</h2>
             <p>Ayo bergabung bersama Chelsea Islan , Chelsea Islan dan team sedang mengadakan penggalangan dana untuk anak-anak Maropo yang mengalami gizi buruk tinggi.Target dana Rp 500.000.000,- Ayo ikut berpartisipasi untuk anak bangsa yang lebih baik.</p>
@@ -119,7 +127,7 @@
                             </div>
             <p><a class="btn btn-secondary" href="#" role="button">Lanjut &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
+          <!-- <div class="col-lg-4">
             <img class="rounded-circle" src="<?=base_url()?>/assets/img/bantuan.jpeg"  alt="Generic placeholder image" width="140" height="140">
             <h2>Bantu Nina Untuk Lebih Baik</h2>
             <p>Nina sedang mengalami kanker otak , mari ulurkan bantuan kita untuk Nina lebih baik. Sekarang Nina masyarakat jambi memerlukan bantuan dana sekitar Rp 200.000.000-, untuk melakukan operasi kanker otak yang sudah 6 bulan dideritanya.Sedikit bantu sangat berarti untuk Nina</p>
@@ -134,11 +142,11 @@
                             </div>
             <p><a class="btn btn-secondary" href="#" role="button">Lanjut &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
+        <!-- </div><!-- /.row -->
 
         <!-- START THE FEATURETTES -->
 
-        <hr class="featurette-divider">
+        <!-- <hr class="featurette-divider">
 
         <div class="row featurette">
           <div class="col-md-7">
@@ -204,7 +212,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider"> -->
 
 
 <!--
@@ -229,6 +237,8 @@
                         </div>
                     </div>
  -->        </div>
+          </div>
+        </div>
 </br>
 </br>
 </br>
@@ -241,35 +251,31 @@
             <div class="container">
                 <nav>
                     <ul>
-                    	<div class= "row">
-                	<div class= "col-md-3">
+                      <div class= "row">
+                  <div class= "col-md-3">
                     <div id="buttons">
                         <p class="category">Ayo Berbagi
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.  </p>
-
-                            </div>
+                        adalah website untuk berdonasi dana , barang dan penghubung untuk melakukan aksi sosial secara online.  </p>
+                        </div>
                         </div>
                         <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
                         <p class="category">Bebagi Donasi </p>
                         <p class="category">Bebagi Barang </p>
                         <p class="category">Aksi Sosial </p>
                         <p class="category">Pengabdian Masyarakat </p>
-                                </div>
+                        </div>
                         <div class="col-md-3 col-lg-3"><button class="btn btn-primary">Pelajari Lebih Lanjut</button>
                         <p class="category">Tentang Kami </p>
-                        <p class="category">F.A.Q </p>
+                        <p class="category"><a href="<?=base_url()?>FAQ">F.A.Q</a></p>
                         <p class="category">Bantuan </p>
                         <p class="category">Tim Sukarelawan </p>
-                                </div>
+                        </div>
                         <div class="col-md-3"><button class="btn btn-info">Kontak Bantuan</button>
                         <p class="category">082304480707 </p>
                         <p class="category">ayo.berbagi@gmail.com </p>
                         <p class="category">Institut Teknologi Sumatera </p>
-                        		</div>
-                        		</div>
+                        </div>
+                        </div>
 
                             </a>
                         </li>
@@ -288,17 +294,17 @@
 
 </body>
 <!--   Core JS Files   -->
-<script src="<?=base_url()?>/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="<?=base_url()?>/assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="<?=base_url()?>/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>assets/js/core/bootstrap.min.js" type="text/javascript"></script>
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="<?=base_url()?>/assets/js/plugins/bootstrap-switch.js"></script>
+<script src="<?=base_url()?>assets/js/plugins/bootstrap-switch.js"></script>
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="<?=base_url()?>/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
 <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-<script src="<?=base_url()?>/assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="<?=base_url()?>assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
 <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
-<script src="<?=base_url()?>/assets/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
+<script src="<?=base_url()?>assets/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         // the body of this function is in assets/js/now-ui-kit.js

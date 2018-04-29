@@ -20,6 +20,22 @@ class BerbagiBarang extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('BarangList');
+		$infoKampanye = $this->Model->getBB()->result_array();
+		if($infoKampanye == null){
+			$data = array(
+				'infoKampanye' => $infoKampanye,
+				'eror' => "Belum ada Kampanye",
+				'page' => 'BarangList',
+				'link' => 'BarangList'
+			);
+			$this->load->view('template/wrapper',$data);
+		}else{
+			$data = array(
+				'infoKampanye' => $infoKampanye,
+				'page' => 'BarangList',
+				'link' => 'BarangList'
+			);
+			$this->load->view('template/wrapper',$data);
+		}
 	}
 }

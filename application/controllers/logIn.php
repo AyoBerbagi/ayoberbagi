@@ -20,7 +20,12 @@ class Login extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('login-page');
+		if(!$this->session->has_userdata('login')){
+				$this->load->view('login-page');
+		}else {
+				$error = array('heading' => "Tidak bisa Log In kembali",'message' => "Anda Sudah Log In!" );
+				$this->load->view('errors/cli/error_404',$error);
+		}
 
  }
 	public function procLogin(){
@@ -70,7 +75,7 @@ class Login extends CI_Controller {
 					'nameUser' => 'Login',
 					'alert' => $alert,
 					'page' => 'notification',
-					'link' => 'home_login'
+					'link' => 'home'
 				);
 				$this->load->view('template/wrapper', $data);
 			}else{

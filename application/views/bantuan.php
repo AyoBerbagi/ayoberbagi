@@ -21,51 +21,59 @@
 <body class="index-page sidebar-bagi8d54a2collapse">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary fixed-top" style="background-color: black">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
-                    Ayo Berbagi
-                </a>
-                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
-                <ul class="navbar-nav">
-
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" target="_blank">
-                            <i class="now-ui-icons"></i>
-                            <p>Menu</p>
-                        </a>
-                           </li>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <p>
-                                                        Bentuk Donasi
-                                                    </p>
-                                                </a>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                    <a class="dropdown-item" href="#">Donasi </a>
-                                                    <a class="dropdown-item" href="#">Berbagi Barang</a>
-                                                    <a class="dropdown-item" href="#">Aksi Sosial</a>
-                                                    <a class="dropdown-item" href="#">Kampanye Baru</a>
-                                                </div>
-                                            </li>
-                                             <li class="nav-item">
-                                                <a class="nav-link" href="#pablo"><i class="now-ui-icons users_single-02" aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-
+      <div class="container">
+          <div class="navbar-translate">
+              <a class="navbar-brand" href="<?=base_url()?>" rel="tooltip">
+                <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
+              </a>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="<?=base_url()?>" >
+                          <i class=""></i>
+                          <p>Home</p>
+                      </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <p>
+                        Bentuk Donasi
+                      </p>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
+                      <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
+                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
+                    </div>
+                  </li>
+                   <!-- <li class="nav-item">
+                    <div class="">
+                      <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
+                    </div>
+                  </li> -->
+                  <?php if($this->session->has_userdata('login')){
+                    echo "<li class='nav-item dropdown'>
+                      <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                        <p>";
+                    echo $_SESSION['nama'];
+                    echo "</p>
+                      </a>
+                      <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                        <a class='dropdown-item' href='".base_url()."Profil'>Profil </a>
+                        <a class='dropdown-item' href='".base_url()."LogOut'>Log Out</a>
+                      </div>
+                      </li>";
+                  }else{
+                    echo "<li class='nav-item'>
+                    <a class='nav-link' href='".base_url()."LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>
+                    </li>";
+                  } ?>
+                   </ul>
+                </div>
+              </div>
+          </nav>
     <!-- End Navbar -->
     <div class="wrapper">
         <div class="page-header clear-filter" filter-color="orange" style="height: 40vh;">

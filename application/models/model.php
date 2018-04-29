@@ -14,6 +14,21 @@ class Model extends CI_Model {
     function list_data_all($table){
          return $query = $this->db->get($table);
     }
+    function getBB()
+    {
+      // code...
+      return $query = $this->db->query("SELECT * FROM infokampanye WHERE i_jenis = 'BB'");
+    }
+    function getBD()
+    {
+      // code...
+      return $query = $this->db->query("SELECT * FROM infokampanye WHERE i_jenis = 'BD'");
+    }
+    function getAKS()
+    {
+      // code...
+      return $query = $this->db->query("SELECT * FROM infokampanye WHERE i_jenis = 'AKS'");
+    }
     //
     // function hitung($param_id, $id, $table){
     //     return $this->db->get_where($table, array($param_id => $id))->num_rows();
