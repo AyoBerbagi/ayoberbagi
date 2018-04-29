@@ -92,7 +92,7 @@
             <h2> $eror </h2><br>
             ";
           }else{
-           foreach ($infoKampanye->result_array() as $key => $value) {
+           foreach ($infoKampanye as $key => $value) {
             // code...
               echo "
               <div class='col-lg-4'>

@@ -11,7 +11,7 @@ class Registrasi extends CI_Controller {
     if ($queryuser->result_array() != null){
 			$alert = "<script>
 					alert('Username telah digunakan !!');
-					window.location.href='".base_url()."';
+					window.location.href='".base_url()."Register';
 					</script>";
 			$data = array(
 				'alert' => $alert,
@@ -22,7 +22,7 @@ class Registrasi extends CI_Controller {
 		}else if ($queryUserEmail->result_array() != null){
 			$alert = "<script>
 					alert('Email telah digunakan !!');
-					window.location.href='".base_url()."';
+					window.location.href='".base_url()."Register';
 					</script>";
 			$data = array(
 				'alert' => $alert,
@@ -48,8 +48,11 @@ class Registrasi extends CI_Controller {
 
 				$alert = "<script>
 					alert('Register Sukses !!');
-					window.location.href='".base_url()."index.php/Home';
+					window.location.href='".base_url()."';
 					</script>";
+					$_SESSION['login'] = $id;
+					$_SESSION['nama'] = $inputNamaBelakang;
+					$_SESSION['username'] = $inputUser;
 				$data = array(
 					'nameUser' => 'Login',
 					'alert' => $alert,
@@ -60,7 +63,7 @@ class Registrasi extends CI_Controller {
 			}else{
 				$alert = "<script>
 				alert('Password tidak cocok!!');
-				window.location.href='".base_url()."';
+				window.location.href='".base_url()."Register';
 				</script>";
 				$data = array(
 					'alert' => $alert,
