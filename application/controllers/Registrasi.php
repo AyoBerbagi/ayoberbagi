@@ -6,22 +6,10 @@ class Registrasi extends CI_Controller {
 	public function index(){
 		extract ($_POST);
 
-    $queryuser = $this->Model->ambil("username",$inputUser,"user");
-		$queryUserEmail = $this->Model->ambil("u_email",$inputEmail,"user");
-    if ($queryuser->result_array() != null){
+		$this->form_validation->set_rules('email','Email','required|trim|valid_email|xss_clean');
+		if($this->form_validation->run()==false){
 			$alert = "<script>
-					alert('Username telah digunakan !!');
-					window.location.href='".base_url()."Register';
-					</script>";
-			$data = array(
-				'alert' => $alert,
-				 'page' => 'notification',
-				 'link' => 'Registrasi'
-			);
-			$this->load->view('template/wrapper', $data);
-		}else if ($queryUserEmail->result_array() != null){
-			$alert = "<script>
-					alert('Email telah digunakan !!');
+					alert('Email tidak valid !!');
 					window.location.href='".base_url()."Register';
 					</script>";
 			$data = array(
@@ -31,48 +19,75 @@ class Registrasi extends CI_Controller {
 			);
 			$this->load->view('template/wrapper', $data);
 		}else{
-			if ($inputPass == $inputPassRe){
-
-				$id = $this->getUniqueID()+1;
-				$dataInsert = array(
-					'id' => $id,
-					'username' => $inputUser,
-					'password' => $inputPass,
-					'u_namad' => $inputNamaDepan,
-					'u_namab' => $inputNamaBelakang,
-					'u_email' => $inputEmail,
-					'u_jk' => $inputJK
-        );
-
-				$queryInsert = $this->Model->simpan_data($dataInsert,'user');
-
+			$queryuser = $this->Model->ambil("username",$inputUser,"user");
+			$queryUserEmail = $this->Model->ambil("u_email",$inputEmail,"user");
+	    if ($queryuser->result_array() != null){
 				$alert = "<script>
-					alert('Register Sukses !!');
-					window.location.href='".base_url()."';
-					</script>";
-					$_SESSION['login'] = $id;
-					$_SESSION['nama'] = $inputNamaBelakang;
-					$_SESSION['username'] = $inputUser;
-				$data = array(
-					'nameUser' => 'Login',
-					'alert' => $alert,
-					 'page' => 'notification',
-					 'link' => 'home'
-				);
-				$this->load->view('template/wrapper', $data);
-			}else{
-				$alert = "<script>
-				alert('Password tidak cocok!!');
-				window.location.href='".base_url()."Register';
-				</script>";
+						alert('Username telah digunakan !!');
+						window.location.href='".base_url()."Register';
+						</script>";
 				$data = array(
 					'alert' => $alert,
 					 'page' => 'notification',
 					 'link' => 'Registrasi'
 				);
 				$this->load->view('template/wrapper', $data);
+			}else if ($queryUserEmail->result_array() != null){
+				$alert = "<script>
+						alert('Email telah digunakan !!');
+						window.location.href='".base_url()."Register';
+						</script>";
+				$data = array(
+					'alert' => $alert,
+					 'page' => 'notification',
+					 'link' => 'Registrasi'
+				);
+				$this->load->view('template/wrapper', $data);
+			}else{
+				if ($inputPass == $inputPassRe){
+
+					$id = $this->getUniqueID()+1;
+					$dataInsert = array(
+						'id' => $id,
+						'username' => $inputUser,
+						'password' => $inputPass,
+						'u_namad' => $inputNamaDepan,
+						'u_namab' => $inputNamaBelakang,
+						'u_email' => $inputEmail,
+						'u_jk' => $inputJK
+	        );
+
+					$queryInsert = $this->Model->simpan_data($dataInsert,'user');
+
+					$alert = "<script>
+						alert('Register Sukses !!');
+						window.location.href='".base_url()."';
+						</script>";
+						$_SESSION['login'] = $id;
+						$_SESSION['nama'] = $inputNamaBelakang;
+						$_SESSION['username'] = $inputUser;
+					$data = array(
+						'nameUser' => 'Login',
+						'alert' => $alert,
+						 'page' => 'notification',
+						 'link' => 'home'
+					);
+					$this->load->view('template/wrapper', $data);
+				}else{
+					$alert = "<script>
+					alert('Password tidak cocok!!');
+					window.location.href='".base_url()."Register';
+					</script>";
+					$data = array(
+						'alert' => $alert,
+						 'page' => 'notification',
+						 'link' => 'Registrasi'
+					);
+					$this->load->view('template/wrapper', $data);
+				}
 			}
 		}
+
 	}
 
 	function getUniqueID(){

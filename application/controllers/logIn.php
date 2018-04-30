@@ -38,7 +38,7 @@ class Login extends CI_Controller {
 			$_SESSION['login'] = null;
 			$alert = "<script>
 					alert('Username dan Password salah !!');
-					window.location.href='".base_url()."index.php/login';
+					window.location.href='".base_url()."login';
 					</script>";
 			$data = array(
 				'alert' => $alert,
@@ -50,7 +50,7 @@ class Login extends CI_Controller {
 			$_SESSION['login'] = null;
 			$alert = "<script>
 					alert('Username salah !!');
-					window.location.href='".base_url()."index.php/login';
+					window.location.href='".base_url()."login';
 					</script>";
 			$data = array(
 				'alert' => $alert,
@@ -82,7 +82,7 @@ class Login extends CI_Controller {
 				$_SESSION['login'] = null;
 				$alert = "<script>
 				alert('Password Salah !!');
-				window.location.href='".base_url()."';
+				window.location.href='".base_url()."login';
 				</script>";
 				$data = array(
 					'alert' => $alert,

@@ -155,15 +155,15 @@
                                     <!-- Tab panes -->
                                     <div class="tab-content text-center">
                                         <div class="tab-pane active" id="home" role="tabpanel">
-                                <br>1.Pembayaran dan penerimaan donasi via transfer
-                                <br>Pengiriman barang melalui kurir atau datang langsung ke ITERA
+                                <br><b>Pembayaran dan penerimaan donasi via transfer</b>
+                                <br><b>Pengiriman barang melalui kurir atau datang langsung ke ITERA</b></br>
                                         </div>
                                         <div class="tab-pane" id="profile" role="tabpanel">
-                                            <br>Donasi dapat dilihat siapa saja dan tercatat secara real-time
-                                <br>Dokumentasi pemberian donasi dapat dilihat oleh siapa saja
+                                            <br><b>Donasi dapat dilihat siapa saja dan tercatat secara real-time</b>
+                                <br><b>Dokumentasi pemberian donasi dapat dilihat oleh siapa saja</b></br>
                                         </div>
                                         <div class="tab-pane" id="messages" role="tabpanel">
-                                            <br>Validasi pengajuan kampanye dan pendaftaran Tim Sukarelawan diproses 1x24 jam
+                                            <br><b>Validasi pengajuan kampanye dan pendaftaran Tim Sukarelawan diproses 1x24 jam</b></br>
                                          </h5>
                                         </div>
                                         </div>
