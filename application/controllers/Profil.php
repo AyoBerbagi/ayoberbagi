@@ -21,7 +21,13 @@ class Profil extends CI_Controller {
 	public function index()
 	{
 		$infoUser = $this->Model->ambil('id',$_SESSION['login'],'user')->result_array();
+		$transaksi = $this->Model->ambil('id_user',$_SESSION['login'],'tbl_berbagidana')->result_array();
+		$transaksi2 = $this->Model->ambil('id_user',$_SESSION['login'],'tbl_berbagibarang')->result_array();
+		$pengabdian = $this->Model->ambil('id_user',$_SESSION['login'],'tbl_aksisosial')->result_array();
 		$data = array(
+			'transaksi' => $transaksi,
+			'transaksi2' => $transaksi2,
+			'pengabdian' => $pengabdian,
 			'infoUser' => $infoUser,
 			'page' => 'profil',
 			'link' => 'profil'
@@ -92,7 +98,7 @@ class Profil extends CI_Controller {
 				'u_nope' => $nope,
 				'u_lokasi' => $lokasi
 		 );
-
+		$_SESSION['nope'] = $nope;
 		$queryUpdate = $this->Model->update("id",$_SESSION['login'],"user",$dataUpdate);
 
 			$alert = "<script>

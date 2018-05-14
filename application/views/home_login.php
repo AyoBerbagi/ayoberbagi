@@ -26,7 +26,7 @@
                 <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
               </a>
           </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
               <ul class="navbar-nav">
                   <li class="nav-item">
                       <a class="nav-link" href="<?=base_url()?>" >
@@ -43,7 +43,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
                       <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
-                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>AksiSosial">Aksi Sosial</a>
                       <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
                     </div>
                   </li>
@@ -73,7 +73,6 @@
                 </div>
               </div>
           </nav>
-
     <!-- End Navbar -->
     <div class="wrapper">
         <div class="page-header clear-filter" filter-color="orange">
@@ -99,7 +98,7 @@
                                     <div class="carousel-item active">
                                         <img class="d-block" src="<?=base_url()?>assets/img/bg2.jpg" alt="First slide">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5>Jantung Sehat Untuk Mega</h5>
+                                            <h5>Jantung Sehat Untuk Andi</h5>
 
                                         </div>
                                     </div>
@@ -112,7 +111,7 @@
                                     <div class="carousel-item">
                                         <img class="d-block" src="<?=base_url()?>assets/img/Mega2.jpg" alt="Third slide">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5>Aksi Sosial</h5>
+                                            <h5>Donor Darah Masyarakat Dayak</h5>
                                                  </div>
                                     </div>
                                 </div>
@@ -210,22 +209,21 @@
                         adalah website untuk berdonasi dana , barang dan penghubung untuk melakukan aksi sosial secara online.  </p>
                         </div>
                         </div>
-                        <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
-                        <p class="category">Bebagi Donasi </p>
-                        <p class="category">Bebagi Barang </p>
-                        <p class="category">Aksi Sosial </p>
-                        <p class="category">Pengabdian Masyarakat </p>
+                        <div class= "col-md-3"><label>Bentuk Donasi</label>
+                        <p class="category"><a href="<?=base_url()?>BerbagiDana">Bebagi Donasi </p>
+                        <p class="category"><a href="<?=base_url()?>BerbagiBarang">Bebagi Barang </p>
+                        <p class="category"><a href="<?=base_url()?>AksiSosial">Aksi Sosial </p>
                         </div>
-                        <div class="col-md-3 col-lg-3"><button class="btn btn-primary">Pelajari Lebih Lanjut</button>
-                        <p class="category">Tentang Kami </p>
+                        <div class="col-md-3 col-lg-3"><label>Pelajari Lebih Lanjut</label>
+                        <p class="category"><a href="<?=base_url()?>SK">Syarat dan Ketentuan </p>
                         <p class="category"><a href="<?=base_url()?>FAQ">F.A.Q</a></p>
-                        <p class="category">Bantuan </p>
-                        <p class="category">Tim Sukarelawan </p>
+                        <p class="category"><a href="<?=base_url()?>Bantuan">Bantuan </p>
+                        <p class="category"><a href="<?=base_url()?>TimSukarelawan">Tim Sukarelawan </p>
                         </div>
-                        <div class="col-md-3"><button class="btn btn-info">Kontak Bantuan</button>
-                        <p class="category">082304480707 </p>
-                        <p class="category">ayo.berbagi@gmail.com </p>
-                        <p class="category">Institut Teknologi Sumatera </p>
+                        <div class="col-md-3"><label>Kontak Bantuan</label>
+                        <p class="category"><a href="#">082304480707 </p>
+                        <p class="category"><a href="#">ayo.berbagi@gmail.com </p>
+                        <p class="category"><a href="#">Institut Teknologi Sumatera </p>
                         </div>
                         </div>
 
@@ -243,7 +241,6 @@
                 </div>
             </div>
         </footer>
-
 </body>
 <!--   Core JS Files   -->
 <script src="<?=base_url()?>assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>

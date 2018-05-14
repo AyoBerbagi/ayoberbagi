@@ -31,7 +31,6 @@ class Login extends CI_Controller {
 	public function procLogin(){
 		extract ($_POST);
 		$this->load->model('Model');
-
 		$queryuser = $this->Model->ambil("username",$username,"user");
 		$querypass = $this->Model->ambil("password",$password,"user");
 		if (($queryuser->result_array() == null) && ($querypass->result_array() == null)){
@@ -71,6 +70,9 @@ class Login extends CI_Controller {
 				$_SESSION['login'] = $queryuser['id'];
 				$_SESSION['nama'] = $queryuser['u_namab'];
 				$_SESSION['username'] = $queryuser['username'];
+				$_SESSION['nohp'] = $queryuser['u_nope'];
+				$_SESSION['email'] = $queryuser['u_email'];
+				$_SESSION['status'] = $queryuser['status_user'];
 				$data = array(
 					'nameUser' => 'Login',
 					'alert' => $alert,

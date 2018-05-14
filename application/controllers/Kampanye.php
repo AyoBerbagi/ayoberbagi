@@ -27,22 +27,26 @@ class Kampanye extends CI_Controller {
 		extract ($_POST);
 		$id = $this->getUniqueID()+1;
 		$filename = 'userfile';
+		$namaFile = $id;
+		$namaFile .= "_";
+		$namaFile .= substr($_SESSION['nama'],0,5);
+		$namaFile .= ".png";
 		if ($_FILES['userfile']['name']!= "")
    {
 		$config['upload_path']      = './assets/upload/';
 		$config['allowed_types']    = 'gif|jpg|png|exe|xls|doc|docx|xlsx|rar|zip';
 		$config['max_size']         = 8192;
-		$config['file_name']				= $namaKampanye.'.png';
+		$config['file_name']				= $namaFile;
 		$config['max_width']        = 1024;
 		$config['max_height']       = 768;
 		$config['overwrite']				= true;
 
-		$this->load->library('upload', $config);
-	if ( !$this->upload->do_upload($filename))
+		$this->load->library('upload',$config);
+	if(!$this->upload->do_upload($filename))
 	{
 		$alert = "<script>
 		alert('File tidak valid!!');
-		window.location.href='".base_url()."index.php/Kampanye';
+		window.location.href='".base_url()."Kampanye';
 		</script>";
 		$data = array(
 			'alert' => $alert,
@@ -59,13 +63,14 @@ class Kampanye extends CI_Controller {
 			'nama_kampanye' => $namaKampanye,
 			'i_jenis' => $jenisKampanye,
 			'deskripsi' => $Deskripsi,
-			'file' => $namaKampanye.'.png'
+			'file' => $namaFile,
+			'i_tanggal_mulai' => date('Y-m-d'),
+			'i_tanggal_berakhir' => $i_tanggal_berakhir
 		);
 		$queryInsert = $this->Model->simpan_data($dataInsert,'infokampanye');
-
 		$alert = "<script>
-			alert('Daftar Kampanye Sukses !!');
-			window.location.href='".base_url()."index.php/Kampanye';
+			alert('Kampanye telah berhasil dibuat');
+			window.location.href='".base_url()."Kampanye';
 			</script>";
 		$data = array(
 			'alert' => $alert,

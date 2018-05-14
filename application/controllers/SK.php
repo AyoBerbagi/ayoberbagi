@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class FAQ extends CI_Controller {
+class SK extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,22 +20,18 @@ class FAQ extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('v_faq_aksi');
-	}
-  public function berbagibarang()
-	{
-		$this->load->view('v_faq_berbagibarang');
-	}
-  public function panduan()
-	{
-		$this->load->view('v_faq_umum');
+		$this->load->view('v_sk_campaigner');
 	}
   public function donatur()
 	{
-		$this->load->view('v_faq_donatur');
+		$this->load->view('v_sk_donatur');
 	}
-  public function campaigner()
+  public function timsukarelawan()
 	{
-		$this->load->view('v_faq_campaigner');
+		$this->load->view('v_sk_timsukarelawan');
+	}
+  public function umum()
+	{
+		$this->load->view('v_sk_umum');
 	}
 }

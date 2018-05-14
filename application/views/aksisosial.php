@@ -27,7 +27,7 @@
                 <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
               </a>
           </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
               <ul class="navbar-nav">
                   <li class="nav-item">
                       <a class="nav-link" href="<?=base_url()?>" >
@@ -44,7 +44,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
                       <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
-                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>AksiSosial">Aksi Sosial</a>
                       <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
                     </div>
                   </li>
@@ -75,7 +75,7 @@
               </div>
           </nav>
     <!-- End Navbar -->
-   <div class="section section-signup" style="background-image: url('assets/img/bg4.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
+   <div class="section section-signup" style="background-image: url('<?=base_url()?>assets/img/bg4.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
        <div>
                 <div class="container">
                     <div class="row">
@@ -83,92 +83,47 @@
                               <div id="contentt">
                 <h3><b>DAFTAR DESA BINAAN</b></h3>
                 <div class="row">
-                    <div class="col-md-11"  >
-                    <form style="float: right" class="form-inline my-8 my-lg-0">
-                <input class="form-control mr-sm-6" type="text" placeholder="Nama Desa" class="glyphicon glyphicon-search">
-            </form>
+                    <div class="col-md-11">
                     </div>
                 </div>
                 <br>
                 <table class="table table-striped table-hover">
-          <thead>
+                <thead>
                     <tr>
                       <th scope="col">No</th>
                       <th scope="col">Nama Desa</th>
+                      <td scope="col"><b>Alamat Desa</b></td>
                       <td scope="col"><b>Keterangan</b></td>
                     </tr>
-        </thead>
+                </thead>
+
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td></td>
-                      <td><input type="checkbox" name="checkbox" class="bootstrap-switch"
-                    data-on-label="ON"
-                    data-off-label="OFF"
-                 /></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td></td>
-                      <td><input type="checkbox" name="checkbox" class="bootstrap-switch"
-                    data-on-label="ON"
-                    data-off-label="OFF"
-                 /></td>
-                    </tr>
-                      <tr>
-                      <th scope="row">3</th>
-                      <td></td>
-                      <td><input type="checkbox" name="checkbox" class="bootstrap-switch"
-                    data-on-label="ON"
-                    data-off-label="OFF"
-                 /></td>
-                    </tr>
-                      <tr>
-                      <th scope="row">4</th>
-                      <td></td>
-                      <td><input type="checkbox" name="checkbox" class="bootstrap-switch"
-                    data-on-label="ON"
-                    data-off-label="OFF"
-                    /></td>
-                    </tr>
-                      <tr>
-                      <th scope="row">5</th>
-                      <td></td>
-                      <td><input type="checkbox" name="checkbox" class="bootstrap-switch"
-                      data-on-label="ON"
-                      data-off-label="OFF"
-                       /></td>
-                    </tr>
+                      <?php
+                  		$no = $this->uri->segment('3') + 1;
+                  		foreach($user as $u){
+                  		?>
+                  		<tr>
+                  			<td scope="col"><?php echo $no++; ?></td>
+                  			<td scope="col"><?php echo $u->desa_nama ?></td>
+                  			<td scope="col"><?php echo $u->desa_alamat ?></td>
+                        <td scope="col">
+                        <a
+                            href="javascript:;"
+                            data-id="<?php echo $u->id_desa ?>"
+                            data-nama="<?php echo $u->desa_nama ?>"
+                            data-alamat="<?php echo $u->desa_alamat ?>"
+                            data-toggle="modal" data-target="#edit-data">
+                            <button  data-toggle="modal" data-target="#ubah-data" class="btn btn-primary">Mulai Pengabdian</button>
+                        </a>
+                        </td>
+                  		</tr>
+                  	<?php } ?>
                   </tbody>
                 </table>
-        <div>
-           <ul class="pagination pagination-warning" >
-            <li class="page-item disabled">
-              <a class="page-link" href="#">&laquo;</a>
-            </li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">4</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">5</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">&raquo;</a>
-            </li>
-          </ul>
-        </div>
-             <button type="button" class="btn btn-warning btn-sm" href="#">Lanjut
-                    </button>
-
+          <br/>
+         <?php
+         echo $this->pagination->create_links();
+         ?>
                 </div>
                         </div>
 
@@ -199,55 +154,84 @@
                             </nav>
                         </div>
                     </div>
- -->        </div>
-
-
-        <!--  End Modal -->
-        <footer class="footer" data-background-color="violet">
-            <div class="container">
-                <nav>
-                    <ul>
-                      <div class= "row">
-                  <div class= "col-md-3">
-                    <div id="buttons">
-                        <p class="category">Ayo Berbagi
-                        adalah website untuk berdonasi dana , barang dan penghubung untuk melakukan aksi sosial secara online.  </p>
-                        </div>
-                        </div>
-                        <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
-                        <p class="category">Bebagi Donasi </p>
-                        <p class="category">Bebagi Barang </p>
-                        <p class="category">Aksi Sosial </p>
-                        <p class="category">Pengabdian Masyarakat </p>
-                        </div>
-                        <div class="col-md-3 col-lg-3"><button class="btn btn-primary">Pelajari Lebih Lanjut</button>
-                        <p class="category">Tentang Kami </p>
-                        <p class="category"><a href="<?=base_url()?>FAQ">F.A.Q</a></p>
-                        <p class="category">Bantuan </p>
-                        <p class="category">Tim Sukarelawan </p>
-                        </div>
-                        <div class="col-md-3"><button class="btn btn-info">Kontak Bantuan</button>
-                        <p class="category">082304480707 </p>
-                        <p class="category">ayo.berbagi@gmail.com </p>
-                        <p class="category">Institut Teknologi Sumatera </p>
-                        </div>
-                        </div>
-
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>, Designed by
-                    <a href="http://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-                    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-                </div>
+ -->
+ <!-- Modal Ubah -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-data" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Pengabdian Masyarakat</h4>
             </div>
-        </footer>
+            <form class="form-horizontal" action="<?=base_url()?>Aksisosial/kontribusi" method="post" enctype="multipart/form-data" role="form">
+	            <div class="modal-body">
+	                    <div class="form-group">
+	                        <label class="col-lg-6 col-sm-2 control-label">Nama Desa</label>
+	                        <div class="col-lg-10">
+	                        	<input type="hidden" id="id" name="id">
+	                            <input type="text" class="form-control" id="nama" name="nama"readonly>
+	                        </div>
+	                    </div>
+	                    <div class="form-group">
+	                        <label class="col-lg-6 col-sm-2 control-label">Alamat Desa</label>
+	                        <div class="col-lg-10">
+	                        	<textarea class="form-control" id="alamat" name="alamat" readonly></textarea>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="modal-footer">
+	                    <button class="btn btn-success" type="submit">Lanjut &raquo;</button>
+	                    <button type="button" class="btn btn-danger" data-dismiss="modal"> Batal</button>
+	                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Modal Ubah -->
+<footer class="footer" data-background-color="violet">
+    <div class="container">
+        <nav>
+            <ul>
+              <div class= "row">
+          <div class= "col-md-3">
+            <div id="buttons">
+                <p class="category">Ayo Berbagi
+                adalah website untuk berdonasi dana , barang dan penghubung untuk melakukan aksi sosial secara online.  </p>
+                </div>
+                </div>
+                <div class= "col-md-3"><label>Bentuk Donasi</label>
+                <p class="category"><a href="<?=base_url()?>BerbagiDana">Bebagi Donasi </p>
+                <p class="category"><a href="<?=base_url()?>BerbagiBarang">Bebagi Barang </p>
+                <p class="category"><a href="<?=base_url()?>AksiSosial">Aksi Sosial </p>
+                </div>
+                <div class="col-md-3 col-lg-3"><label>Pelajari Lebih Lanjut</label>
+                <p class="category"><a href="<?=base_url()?>SK">Syarat dan Ketentuan </p>
+                <p class="category"><a href="<?=base_url()?>FAQ">F.A.Q</a></p>
+                <p class="category"><a href="<?=base_url()?>Bantuan">Bantuan </p>
+                <p class="category"><a href="<?=base_url()?>TimSukarelawan">Tim Sukarelawan </p>
+                </div>
+                <div class="col-md-3"><label>Kontak Bantuan</label>
+                <p class="category"><a href="#">082304480707 </p>
+                <p class="category"><a href="#">ayo.berbagi@gmail.com </p>
+                <p class="category"><a href="#">Institut Teknologi Sumatera </p>
+                </div>
+                </div>
 
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>, Designed by
+            <a href="http://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+        </div>
+    </div>
+</footer>
 </body>
 <!--   Core JS Files   -->
 <script src="<?=base_url()?>assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
@@ -276,5 +260,18 @@
         }
     }
 </script>
+<script>
+    $(document).ready(function() {
+        // Untuk sunting
+        $('#edit-data').on('show.bs.modal', function (event) {
+            var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+            var modal          = $(this)
 
+            // Isi nilai pada field
+            modal.find('#id').attr("value",div.data('id'));
+            modal.find('#nama').attr("value",div.data('nama'));
+            modal.find('#alamat').html(div.data('alamat'));
+        });
+    });
+</script>
 </html>

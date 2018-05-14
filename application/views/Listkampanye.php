@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+function limit_words($string, $word_limit) {
+  if(strlen($string)>$word_limit){
+	$string = strip_tags($string);
+	$words = explode(' ', strip_tags($string));
+	$return = trim(implode(' ', array_slice($words, 0, $word_limit)));
+	if(strlen($return) < strlen($string)){
+	$return .= '...';
+	}
+	return $return;
+}else{
+  return $string;
+}
+}
+?>
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="<?=base_url()?>/assets/img/apple-icon.png">
@@ -44,7 +58,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
                       <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
-                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>AksiSosial">Aksi Sosial</a>
                       <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
                     </div>
                   </li>
@@ -93,24 +107,31 @@
         }else{
           foreach ($infoKampanye as $key => $value) {
           // code...
-          echo "
-            <div class='col-lg-4'>
+          $progress = ($value['i_terkumpul'] / $value['i_target']) * 100;
+          $progress = number_format($progress,2);
+          $word = limit_words($value['deskripsi'],30);
+          echo "<form method='POST' action='".base_url()."berbagiDana/kontribusi/'>
+            <div class='col-lg-8'>
+              <input type='hidden' name='id_kampanye' value='".$value['id_kampanye']."'>
               <img class='rounded-circle' src='".base_url()."assets/upload/".$value['file']."' alt='Generic placeholder image' width='140' height='140'>
-              <h2>".$value['nama_kampanye']."</h2>
-              <p>".$value['deskripsi']."</p>
+              <h2 class='title title-up' style='width:500px;'>".$value['nama_kampanye']."</h2>
+              <p style='width:500px;'>".$word."</p>
               <h5>Progress Dana</h5>
                               <div class='progress-container progress-primary'>
-                                  <span class='progress-badge'>Terkumpul dari target Rp 300.000.000,-</span>
+                                  <span class='progress-badge'>Terkumpul dari target Rp.".$value['i_target']."</span>
                                   <div class='progress'>
-                                      <div class='progress-bar progress-bar-warning' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 50%;'>
-                                          <span class='progress-value'>60%</span>
+                                      <div class='progress-bar progress-bar-warning' role='progressbar' aria-valuenow='".$progress."' aria-valuemin='0' aria-valuemax='100' style='width: ".$progress."%;'>
+                                          <span class='progress-value'>".$progress."%</span>
                                       </div>
                                   </div>
                               </div>
-              <p><a class='btn btn-secondary' href='".base_url()."index.php/BerbagiDana' role='button'>Lanjut &raquo;</a></p>
-            </div>";
-        }}
-         ?>
+                              <p>
+                              <input type='submit' role='button' class='btn btn-secondary' value='Lanjut &raquo;'>
+                            </p>
+                            </div>
+            </form>";
+          }
+        } ?>
         <!-- /.col-lg-4 -->
           <!-- <div class="col-lg-4">
             <img class="rounded-circle" src="<?=base_url()?>/assets/img/bg1.jpg" alt="Generic placeholder image" width="140" height="140">
@@ -258,22 +279,21 @@
                         adalah website untuk berdonasi dana , barang dan penghubung untuk melakukan aksi sosial secara online.  </p>
                         </div>
                         </div>
-                        <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
-                        <p class="category">Bebagi Donasi </p>
-                        <p class="category">Bebagi Barang </p>
-                        <p class="category">Aksi Sosial </p>
-                        <p class="category">Pengabdian Masyarakat </p>
+                        <div class= "col-md-3"><label>Bentuk Donasi</label>
+                        <p class="category"><a href="<?=base_url()?>BerbagiDana">Bebagi Donasi </p>
+                        <p class="category"><a href="<?=base_url()?>BerbagiBarang">Bebagi Barang </p>
+                        <p class="category"><a href="<?=base_url()?>AksiSosial">Aksi Sosial </p>
                         </div>
-                        <div class="col-md-3 col-lg-3"><button class="btn btn-primary">Pelajari Lebih Lanjut</button>
-                        <p class="category">Tentang Kami </p>
+                        <div class="col-md-3 col-lg-3"><label>Pelajari Lebih Lanjut</label>
+                        <p class="category"><a href="<?=base_url()?>SK">Syarat dan Ketentuan </p>
                         <p class="category"><a href="<?=base_url()?>FAQ">F.A.Q</a></p>
-                        <p class="category">Bantuan </p>
-                        <p class="category">Tim Sukarelawan </p>
+                        <p class="category"><a href="<?=base_url()?>Bantuan">Bantuan </p>
+                        <p class="category"><a href="<?=base_url()?>TimSukarelawan">Tim Sukarelawan </p>
                         </div>
-                        <div class="col-md-3"><button class="btn btn-info">Kontak Bantuan</button>
-                        <p class="category">082304480707 </p>
-                        <p class="category">ayo.berbagi@gmail.com </p>
-                        <p class="category">Institut Teknologi Sumatera </p>
+                        <div class="col-md-3"><label>Kontak Bantuan</label>
+                        <p class="category"><a href="#">082304480707 </p>
+                        <p class="category"><a href="#">ayo.berbagi@gmail.com </p>
+                        <p class="category"><a href="#">Institut Teknologi Sumatera </p>
                         </div>
                         </div>
 
@@ -310,7 +330,6 @@
         // the body of this function is in assets/js/now-ui-kit.js
         nowuiKit.initSliders();
     });
-
     function scrollToDownload() {
 
         if ($('.section-download').length != 0) {

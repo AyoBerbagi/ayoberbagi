@@ -27,7 +27,7 @@
                 <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
               </a>
           </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
               <ul class="navbar-nav">
                   <li class="nav-item">
                       <a class="nav-link" href="<?=base_url()?>" >
@@ -44,7 +44,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
                       <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
-                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>AksiSosial">Aksi Sosial</a>
                       <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
                     </div>
                   </li>
@@ -91,7 +91,7 @@
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons users_circle-08"></i>
                                 </span>
-                                <input id="username" type="text" class="form-control" name="username" placeholder="Email atau Username">
+                                <input id="username" type="text" class="form-control" name="username" placeholder="Username">
                             </div>
                             <div class="input-group form-group-no-border input-lg">
                                 <span class="input-group-addon">

@@ -26,7 +26,7 @@
                 <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
               </a>
           </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
               <ul class="navbar-nav">
                   <li class="nav-item">
                       <a class="nav-link" href="<?=base_url()?>" >
@@ -43,7 +43,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
                       <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
-                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>AksiSosial">Aksi Sosial</a>
                       <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
                     </div>
                   </li>
@@ -79,12 +79,12 @@
             <div class="page-header-image" data-parallax="true" style="background-image: url('<?=base_url()?>/assets/img/teman.png');">
 
             </div>
-            	<br>
-            	<br>
-            	<br>
-            	<br>
-            	<br>
-            	<br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
           <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-8">
@@ -98,7 +98,7 @@
                                     <div class="carousel-item active">
                                         <img class="d-block" src="<?=base_url()?>assets/img/bg2.jpg" alt="First slide">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5>Jantung Sehat Untuk Mega</h5>
+                                            <h5>Jantung Sehat Untuk Andi</h5>
 
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                                     <div class="carousel-item">
                                         <img class="d-block" src="<?=base_url()?>assets/img/Mega2.jpg" alt="Third slide">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5>Aksi Sosial</h5>
+                                            <h5>Donor Darah Masyarakat Dayak</h5>
                                                  </div>
                                     </div>
                                 </div>
@@ -127,52 +127,52 @@
                           </div>
               </div>
             </div>
-             <div class="section section-nucleo-icons">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="title">Kenapa memilih Ayo Berbagi?</h2>
-                            <h5 class="description">
-                                 <div class="card">
-                                <ul class="nav nav-tabs justify-content-center" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
-                                            <i class=""></i> Mudah
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-                                            <i class=""></i> Aman
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
-                                            <i class=""></i> Cepat
-                                        </a>
+            <div class="section section-nucleo-icons">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-md-12">
+                           <h2 class="title">Kenapa memilih Ayo Berbagi?</h2>
+                           <h5 class="description">
+                                <div class="card">
+                               <ul class="nav nav-tabs justify-content-center" role="tablist">
+                                   <li class="nav-item">
+                                       <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
+                                           <i class=""></i> Mudah
+                                       </a>
+                                   </li>
+                                   <li class="nav-item">
+                                       <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
+                                           <i class=""></i> Aman
+                                       </a>
+                                   </li>
+                                   <li class="nav-item">
+                                       <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                                           <i class=""></i> Cepat
+                                       </a>
 
-                                </ul>
-                                <div class="card-body">
-                                    <!-- Tab panes -->
-                                    <div class="tab-content text-center">
-                                        <div class="tab-pane active" id="home" role="tabpanel">
-                                <br><b>Pembayaran dan penerimaan donasi via transfer</b>
-                                <br><b>Pengiriman barang melalui kurir atau datang langsung ke ITERA</b></br>
-                                        </div>
-                                        <div class="tab-pane" id="profile" role="tabpanel">
-                                            <br><b>Donasi dapat dilihat siapa saja dan tercatat secara real-time</b>
-                                <br><b>Dokumentasi pemberian donasi dapat dilihat oleh siapa saja</b></br>
-                                        </div>
-                                        <div class="tab-pane" id="messages" role="tabpanel">
-                                            <br><b>Validasi pengajuan kampanye dan pendaftaran Tim Sukarelawan diproses 1x24 jam</b></br>
-                                         </h5>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                </div>
-              </div>
-            </div>
+                               </ul>
+                               <div class="card-body">
+                                   <!-- Tab panes -->
+                                   <div class="tab-content text-center">
+                                       <div class="tab-pane active" id="home" role="tabpanel">
+                               <br><b>Pembayaran dan penerimaan donasi via transfer</b>
+                               <br><b>Pengiriman barang melalui kurir atau datang langsung ke ITERA</b></br>
+                                       </div>
+                                       <div class="tab-pane" id="profile" role="tabpanel">
+                                           <br><b>Donasi dapat dilihat siapa saja dan tercatat secara real-time</b>
+                               <br><b>Dokumentasi pemberian donasi dapat dilihat oleh siapa saja</b></br>
+                                       </div>
+                                       <div class="tab-pane" id="messages" role="tabpanel">
+                                           <br><b>Validasi pengajuan kampanye dan pendaftaran Tim Sukarelawan diproses 1x24 jam</b></br>
+                                        </h5>
+                                       </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+               </div>
+             </div>
+           </div>
 <!--
                                     <div class="collapse navbar-collapse justify-content-end" id="example-navbar-icons">
                                         <ul class="navbar-nav">
@@ -202,29 +202,28 @@
             <div class="container">
                 <nav>
                     <ul>
-                    	<div class= "row">
-                	<div class= "col-md-3">
+                      <div class= "row">
+                  <div class= "col-md-3">
                     <div id="buttons">
                         <p class="category">Ayo Berbagi
                         adalah website untuk berdonasi dana , barang dan penghubung untuk melakukan aksi sosial secara online.  </p>
                         </div>
                         </div>
-                        <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
-                        <p class="category">Bebagi Donasi </p>
-                        <p class="category">Bebagi Barang </p>
-                        <p class="category">Aksi Sosial </p>
-                        <p class="category">Pengabdian Masyarakat </p>
+                        <div class= "col-md-3"><label>Bentuk Donasi</label>
+                        <p class="category"><a href="<?=base_url()?>BerbagiDana">Bebagi Donasi </p>
+                        <p class="category"><a href="<?=base_url()?>BerbagiBarang">Bebagi Barang </p>
+                        <p class="category"><a href="<?=base_url()?>AksiSosial">Aksi Sosial </p>
                         </div>
-                        <div class="col-md-3 col-lg-3"><button class="btn btn-primary">Pelajari Lebih Lanjut</button>
-                        <p class="category">Tentang Kami </p>
+                        <div class="col-md-3 col-lg-3"><label>Pelajari Lebih Lanjut</label>
+                        <p class="category"><a href="<?=base_url()?>SK">Syarat dan Ketentuan </p>
                         <p class="category"><a href="<?=base_url()?>FAQ">F.A.Q</a></p>
-                        <p class="category">Bantuan </p>
-                        <p class="category">Tim Sukarelawan </p>
+                        <p class="category"><a href="<?=base_url()?>Bantuan">Bantuan </p>
+                        <p class="category"><a href="<?=base_url()?>TimSukarelawan">Tim Sukarelawan </p>
                         </div>
-                        <div class="col-md-3"><button class="btn btn-info">Kontak Bantuan</button>
-                        <p class="category">082304480707 </p>
-                        <p class="category">ayo.berbagi@gmail.com </p>
-                        <p class="category">Institut Teknologi Sumatera </p>
+                        <div class="col-md-3"><label>Kontak Bantuan</label>
+                        <p class="category"><a href="#">082304480707 </p>
+                        <p class="category"><a href="#">ayo.berbagi@gmail.com </p>
+                        <p class="category"><a href="#">Institut Teknologi Sumatera </p>
                         </div>
                         </div>
 

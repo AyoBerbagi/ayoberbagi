@@ -44,7 +44,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
                       <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
-                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>AksiSosial">Aksi Sosial</a>
                       <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
                     </div>
                   </li>
@@ -140,22 +140,21 @@
                                     adalah website untuk berdonasi dana , barang dan penghubung untuk melakukan aksi sosial secara online.  </p>
                                     </div>
                                     </div>
-                                    <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
-                                    <p class="category">Bebagi Donasi </p>
-                                    <p class="category">Bebagi Barang </p>
-                                    <p class="category">Aksi Sosial </p>
-                                    <p class="category">Pengabdian Masyarakat </p>
+                                    <div class= "col-md-3"><label>Bentuk Donasi</label>
+                                    <p class="category"><a href="<?=base_url()?>BerbagiDana">Bebagi Donasi </p>
+                                    <p class="category"><a href="<?=base_url()?>BerbagiBarang">Bebagi Barang </p>
+                                    <p class="category"><a href="<?=base_url()?>AksiSosial">Aksi Sosial </p>
                                     </div>
-                                    <div class="col-md-3 col-lg-3"><button class="btn btn-primary">Pelajari Lebih Lanjut</button>
-                                    <p class="category">Tentang Kami </p>
+                                    <div class="col-md-3 col-lg-3"><label>Pelajari Lebih Lanjut</label>
+                                    <p class="category"><a href="<?=base_url()?>SK">Syarat dan Ketentuan </p>
                                     <p class="category"><a href="<?=base_url()?>FAQ">F.A.Q</a></p>
-                                    <p class="category">Bantuan </p>
-                                    <p class="category">Tim Sukarelawan </p>
+                                    <p class="category"><a href="<?=base_url()?>Bantuan">Bantuan </p>
+                                    <p class="category"><a href="<?=base_url()?>TimSukarelawan">Tim Sukarelawan </p>
                                     </div>
-                                    <div class="col-md-3"><button class="btn btn-info">Kontak Bantuan</button>
-                                    <p class="category">082304480707 </p>
-                                    <p class="category">ayo.berbagi@gmail.com </p>
-                                    <p class="category">Institut Teknologi Sumatera </p>
+                                    <div class="col-md-3"><label>Kontak Bantuan</label>
+                                    <p class="category"><a href="#">082304480707 </p>
+                                    <p class="category"><a href="#">ayo.berbagi@gmail.com </p>
+                                    <p class="category"><a href="#">Institut Teknologi Sumatera </p>
                                     </div>
                                     </div>
 

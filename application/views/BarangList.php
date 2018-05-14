@@ -20,62 +20,62 @@
 <body class="index-page sidebar-bagi8d54a2collapse">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary fixed-top " style="background-color: #8d54a2">
-<div class="container">
-    <div class="navbar-translate">
-        <a class="navbar-brand" href="<?=base_url()?>" rel="tooltip">
-          <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
-        </a>
-    </div>
-    <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="<?=base_url()?>" >
-                    <i class=""></i>
-                    <p>Home</p>
-                </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <p>
-                  Bentuk Donasi
-                </p>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
-                <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
-                <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
-                <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
-              </div>
-            </li>
-             <!-- <li class="nav-item">
-              <div class="">
-                <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
-              </div>
-            </li> -->
-            <?php if($this->session->has_userdata('login')){
-              echo "<li class='nav-item dropdown'>
-                <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                  <p>";
-              echo $_SESSION['nama'];
-              echo "</p>
-                </a>
-                <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
-                  <a class='dropdown-item' href='".base_url()."Profil'>Profil </a>
-                  <a class='dropdown-item' href='".base_url()."LogOut'>Log Out</a>
-                </div>
-                </li>";
-            }else{
-              echo "<li class='nav-item'>
-              <a class='nav-link' href='".base_url()."LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>
-              </li>";
-            } ?>
-             </ul>
-          </div>
+      <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" href="<?=base_url()?>" rel="tooltip">
+              <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
+            </a>
         </div>
-    </nav>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?=base_url()?>" >
+                        <i class=""></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <p>
+                      Bentuk Donasi
+                    </p>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
+                    <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
+                    <a class="dropdown-item" href="<?=base_url()?>AksiSosial">Aksi Sosial</a>
+                    <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
+                  </div>
+                </li>
+                 <!-- <li class="nav-item">
+                  <div class="">
+                    <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
+                  </div>
+                </li> -->
+                <?php if($this->session->has_userdata('login')){
+                  echo "<li class='nav-item dropdown'>
+                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                      <p>";
+                  echo $_SESSION['nama'];
+                  echo "</p>
+                    </a>
+                    <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                      <a class='dropdown-item' href='".base_url()."Profil'>Profil </a>
+                      <a class='dropdown-item' href='".base_url()."LogOut'>Log Out</a>
+                    </div>
+                    </li>";
+                }else{
+                  echo "<li class='nav-item'>
+                  <a class='nav-link' href='".base_url()."LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>
+                  </li>";
+                } ?>
+                 </ul>
+              </div>
+            </div>
+        </nav>
 
     <!-- End Navbar -->
-   <div class="section section-signup" style="background-image: url('<?=base_url()?>/assets/img/Bgbarang.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
+   <div class="section section-signup" style="background-image: url('<?=base_url()?>assets/img/Bgbarang.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
                <!-- Marketing messaging and featurettes
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -94,23 +94,32 @@
           }else{
            foreach ($infoKampanye as $key => $value) {
             // code...
-              echo "
-              <div class='col-lg-4'>
+              $date1 = date_create($value['i_tanggal_mulai']);
+              $date2 = date_create($value['i_tanggal_berakhir']);
+              $date = date_diff($date1,$date2);
+              $sisa = $date->format('%a');
+              if($sisa>0){
+              echo "<form method='POST' action='".base_url()."BerbagiBarang/kontribusi/'>
+              <div class='col-lg-8'>
+              <input type='hidden' name='id_kampanye' value='".$value['id_kampanye']."'>
                 <img class='rounded-circle' src='".base_url()."assets/upload/".$value['file']."' alt='Generic placeholder image' width='140' height='140'>
                 <h2>".$value['nama_kampanye']."</h2>
                 <p>".$value['deskripsi']."</p>
-                <h5>Progress Dana</h5>
+                <h5>Progress Berbagi Barang</h5>
                                 <div class='progress-container progress-primary'>
-                                    <span class='progress-badge'>Terkumpul dari target Rp 300.000.000,-</span>
+                                    <span class='progress-badge'>Sisa hari</span>
                                     <div class='progress'>
                                         <div class='progress-bar progress-bar-warning' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 50%;'>
-                                            <span class='progress-value'>60%</span>
+                                            <span class='progress-value'>".$date->format("%a hari")."</span>
                                         </div>
                                     </div>
                                 </div>
-                <p><a class='btn btn-secondary' href='".base_url()."BerbagiDana' role='button'>Lanjut &raquo;</a></p>
-              </div>";
-            }
+                                <p>
+                                <input type='submit' role='button' class='btn btn-secondary' value='Lanjut &raquo;'>
+                              </p>
+                              </div>
+              </form>";
+            }}
           } ?><!-- /.col-lg-4 -->
           <!-- <div class="col-lg-4">
             <img class="rounded-circle" src="<?=base_url()?>/assets/img/barang2.jpg" alt="Generic placeholder image" width="140" height="140">
@@ -259,22 +268,21 @@
                         adalah website untuk berdonasi dana , barang dan penghubung untuk melakukan aksi sosial secara online.  </p>
                         </div>
                         </div>
-                        <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
-                        <p class="category">Bebagi Donasi </p>
-                        <p class="category">Bebagi Barang </p>
-                        <p class="category">Aksi Sosial </p>
-                        <p class="category">Pengabdian Masyarakat </p>
+                        <div class= "col-md-3"><label>Bentuk Donasi</label>
+                        <p class="category"><a href="<?=base_url()?>BerbagiDana">Bebagi Donasi </p>
+                        <p class="category"><a href="<?=base_url()?>BerbagiBarang">Bebagi Barang </p>
+                        <p class="category"><a href="<?=base_url()?>AksiSosial">Aksi Sosial </p>
                         </div>
-                        <div class="col-md-3 col-lg-3"><button class="btn btn-primary">Pelajari Lebih Lanjut</button>
-                        <p class="category">Tentang Kami </p>
+                        <div class="col-md-3 col-lg-3"><label>Pelajari Lebih Lanjut</label>
+                        <p class="category"><a href="<?=base_url()?>SK">Syarat dan Ketentuan </p>
                         <p class="category"><a href="<?=base_url()?>FAQ">F.A.Q</a></p>
-                        <p class="category">Bantuan </p>
-                        <p class="category">Tim Sukarelawan </p>
+                        <p class="category"><a href="<?=base_url()?>Bantuan">Bantuan </p>
+                        <p class="category"><a href="<?=base_url()?>TimSukarelawan">Tim Sukarelawan </p>
                         </div>
-                        <div class="col-md-3"><button class="btn btn-info">Kontak Bantuan</button>
-                        <p class="category">082304480707 </p>
-                        <p class="category">ayo.berbagi@gmail.com </p>
-                        <p class="category">Institut Teknologi Sumatera </p>
+                        <div class="col-md-3"><label>Kontak Bantuan</label>
+                        <p class="category"><a href="#">082304480707 </p>
+                        <p class="category"><a href="#">ayo.berbagi@gmail.com </p>
+                        <p class="category"><a href="#">Institut Teknologi Sumatera </p>
                         </div>
                         </div>
 

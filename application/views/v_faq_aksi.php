@@ -6,28 +6,28 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<?=base_url()?>/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="<?=base_url()?>/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Bantuan  </title>
+    <title>FAQ(Aksi sosial)</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
     <link href="<?=base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="<?=base_url()?>/assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/pondasi.css?v=1.1.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="<?=base_url()?>/assets/css/demo.css" rel="stylesheet" />
 </head>
 
 <body class="index-page sidebar-bagi8d54a2collapse">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top" style="background-color: black">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top ">
       <div class="container">
           <div class="navbar-translate">
               <a class="navbar-brand" href="<?=base_url()?>" rel="tooltip">
                 <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
               </a>
           </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
               <ul class="navbar-nav">
                   <li class="nav-item">
                       <a class="nav-link" href="<?=base_url()?>" >
@@ -44,7 +44,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
                       <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
-                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>AksiSosial">Aksi Sosial</a>
                       <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
                     </div>
                   </li>
@@ -75,65 +75,111 @@
               </div>
           </nav>
     <!-- End Navbar -->
-    <div class="wrapper">
-        <div class="page-header clear-filter" filter-color="orange" style="height: 40vh;">
-            <div class="page-header-image" data-parallax="true" >
-
-            </div>
-          <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8 back">
-                            <h2>AJUKAN PERTANYAAN KEPADA KAMI</h2>
-                                    </div>
-                                </div>
-            </div>
-
-                            </div>
-                        </div>
-
-             <div class="section section-nucleo-icons">
+   <div class="section section-signup" style="background-color:white;">
                 <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-5" style="padding-left: 90px;">
-                            <h3>isi formulir di bawah ini</h3>
+                    <div class="row">
+                        <div class="col-md-4" >
+                            <ul  class="nav nav-pills">
+                               <button class="btn btn-primary col-md-10" id="borderbox">
+                          <li href="<?=base_url()?>FAQ/panduan" class="active">Panduan Umum <span class="pull-right fa fa-chevron-right"></span></li></button>
+                               <button class="btn btn-primary col-md-10" id="borderbox">
+                          <li href="<?=base_url()?>FAQ/campaigner">Untuk Campaigner<span class="pull-right fa fa-chevron-right"></span></li></button>
+                               <button class="btn btn-primary col-md-10" id="borderbox">
+                          <li href="<?=base_url()?>FAQ">Aksi Sosial<span class="pull-right fa fa-chevron-right"></span></li></button>
+                                <button class="btn btn-primary col-md-10" id="borderbox">
+                          <li href="<?=base_url()?>">Pencairan Dana<span class="pull-right fa fa-chevron-right"></span></li></button>
+                               <button class="btn btn-primary col-md-10" id="borderbox">
+                          <li href="<?=base_url()?>FAQ/donatur">Untuk Donatur<span class="pull-right fa fa-chevron-right"></span></li></button>
+                                <button class="btn btn-primary col-md-10" id="borderbox">
+                          <li href="<?=base_url()?>FAQ/berbagibarang">Berbagi Barang<span class="pull-right fa fa-chevron-right"></span></li></button>
+                       </ul>
                         </div>
                         <div class="col-md-8">
                             <div class="row">
-                    <div class="col-md-6 form-group g-mb-20 has-error">
-                    <label class="g-color-gray-dark-v2 g-font-size-13">Nama Lengkap</label>
-                    <input class="form-control form-control-md rounded-0" name="nama" type="text" placeholder="Muhammad Sholeh Al-Habib" required="">
+                            <div class="col-md-9">
+                                <br>
+                                    <div class="form-group">
+                         <input type="text" value="" placeholder="Cari Pertannyaanmu ..." class="form-control" id="borderbox">
+                                    </div>
+
+                        </div>
+
+                                 <div class="col-md-3">
+                            <button class="btn btn-primary" style="margin-top: 20px">CARI
+                                </button>
+                            </div>
+                            </div>
+                            <h2><b>Aksi Sosial</b></h2>
+                           <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Apa itu Aksi Sosial?
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+       Aksi sosial merupakan sebuah pengabdian kepada masyarakat yang dilakukan oleh sekelompok orang yang telah tergabung dalam forum aksi sosial di website Ayoberbagi.com. Aksi sosial merupakan kegiatan yang meberikan pengaruh positif kepada masyarakat guna meningkatkan kualitas hidup kepada masyarakat
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Apa syarat menjadi tim Aksi Sosial?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+            Setiap orang dapat mendaftarkan diri menjadi tim sukarelawan Aksi Sosial dengan syarat dan ketentuan yang berlaku
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Kapan dan dimana saja Aksi Sosial tersebut?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        Ayoberbagi telah menentukan desa mana saja yang menjadi jangkauan Aksi Sosial dengan daftar desa yang terdapat pada laman website Ayoberbagi.com. waktu menjadi fleksibel ketika tim sudah cukup maka Aksi Sosial dapat dilakukan.<br>
+        Setiap desa di pimpin oleh 1 orang kordinaotr yang menjaga keharmonisan dan kesuksesan dalam menjalankan program Aksi Sosial.
+
+      </div>
+    </div>
+  </div>
+            <div class="card">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+         Mengapa Aksi Sosial perlu dilakukan?
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+      <div class="card-body">
+        Aksi Sosial menjadi sangat penting mengingat masih banyak masyarakat desa yang tidak tersentuh sama sekali dunia pendidikan.
+      </div>
+    </div>
+  </div>
+</div>
                     </div>
 
-                    <div class="col-md-6 form-group g-mb-20 has-error ">
-                    <label class="g-color-gray-dark-v2 g-font-size-13">Email</label>
-                    <input class="form-control form-control-md rounded-0" name="email" type="email" placeholder="sholeh@gmail.com" required="">
-                    </div>
-
-                    <div class="col-md-6 form-group g-mb-20">
-                    <label class="g-color-gray-dark-v2 g-font-size-13">No HP/Telepon</label>
-                    <input class="form-control form-control-md rounded-0" name="subjek" type="text" placeholder="+(62) 823 7824 ****" required="">
-                    </div>
-
-                    <div class="col-md-6 form-group g-mb-20">
-                    <label class="g-color-gray-dark-v2 g-font-size-13">Subject</label>
-                    <input class="form-control form-control-md rounded-0" name="nohp" type="tel" placeholder="Subject" required="">
-                    </div>
-
-                    <div class="col-md-12 form-group g-mb-40">
-                    <label class="g-color-gray-dark-v2 g-font-size-13">Pesan</label>
-                    <textarea class="form-control form-control-md rounded-0" name="pesan" rows="7" placeholder="Pesan Anda" required=""></textarea>
-                    </div>
-                </div>
-                        <button class="btn btn-success disabled" type="submit" role="button" style="margin-left: 300px;">Kirim Pertanyaan </button>
-            <div class="section section-basic">
-                <div class="container">
-
-                	</div>
                 </div>
             </div>
 
-                </div>
-<!--
+<!--          <li data-target="#UntukCampaigner">
+Untuk Campaigner <span class="pull-right fa fa-chevron-right"></span>
+</li>
                                     <div class="collapse navbar-collapse justify-content-end" id="example-navbar-icons">
                                         <ul class="navbar-nav">
                                             <li class="nav-item">
@@ -154,7 +200,7 @@
                             </nav>
                         </div>
                     </div>
- -->        </div>
+ -->
 
 
         <!--  End Modal -->
@@ -229,4 +275,5 @@
   					}
   				}
   				</script>
+
 </html>

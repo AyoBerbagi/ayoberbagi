@@ -3,31 +3,30 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="<?=base_url()?>assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="<?=base_url()?>assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?=base_url()?>/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="<?=base_url()?>/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Kampanye</title>
+    <title>Berbagi Barang</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
-    <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="<?=base_url()?>assets/css/kampanye.css?v=1.1.0" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/BerbagiBarang.css" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="<?=base_url()?>assets/css/demo.css" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/demo.css" rel="stylesheet" />
 </head>
-
 <body class="index-page sidebar-bagi8d54a2collapse">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top ">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top">
       <div class="container">
           <div class="navbar-translate">
               <a class="navbar-brand" href="<?=base_url()?>" rel="tooltip">
                 <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
               </a>
           </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
+          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
               <ul class="navbar-nav">
                   <li class="nav-item">
                       <a class="nav-link" href="<?=base_url()?>" >
@@ -74,91 +73,66 @@
                 </div>
               </div>
           </nav>
+
     <!-- End Navbar -->
-    <?php if(!$this->session->has_userdata('login')){
-      echo "
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class='container'>
-              <div class='row'>
-                <div class='card card-signup' data-background-color='violet'>
-                  <div class='header text-center'>
-                    <h4 class='title title-up'>Log In terlebih dahulu</h4>
-                      <a class='btn btn-success btn-round btn-lg' href='".base_url()."LogIn'><i class='now-ui-icons users_single-02' aria-hidden='true'></i>Log In</a>
-                  </div>
+   <div class="section section-signup" style="background-image: url('<?=base_url()?>/assets/img/bb.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="card card-signup" data-background-color="violet">
+                            <form class="form" method="POST" action="<?=base_url()?>BerbagiBarang/done">
+                                <div class="header text-center">
+                                    <h4 class="title title-up">Berbagi Barang</h4>
+                                    <div class="social-line">
+                                    </div>
+                                      <?php if($ambil==null){
+                                        echo "NULL";
+                                      }else{
+                                        foreach ($ambil as $key =>$value){
+                                        echo "
+                                        <input type='hidden' name='id_kampanye' value='".$value['id_kampanye']."'>
+                                        <div class='input-group form-group-no-border'>
+                                        <span class='input-group-addon'>
+                                            <i class='now-ui-icons users_circle-08'></i>
+                                        </span>
+                                        <input type='text' id='user' value='".$_SESSION['nama']."' name='namaKampanye' class='form-control' readonly>
+                                        </div>
+                                        <div class='input-group form-group-no-border'>
+                                        <span class='input-group-addon'>
+                                            <i class='now-ui-icons ui-2_chat-round'></i>
+                                        </span>
+                                        <input type='text' id='namaKampanye' value='".$value['nama_kampanye']."' name='namaKampanye' class='form-control' readonly>
+                                        </div>";
+                                      ?>
+                                      <?php
+                                    } }?>
+                                    <select name="katergori" class="form-control">
+                                      <option value="Pakaian">Pakaian</option>
+                                      <option value="Obat-obatan">Obat-obatan</option>
+                                      <option value="Buku">Buku</option>
+                                      <option value="Sembako">Sembako</option>
+                                      <option value="Lainnya">Lainnya</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="space-10"></div>
+                                  <div class="row" id="checkRadios">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="col-md-10">
+                                      <div class="checkbox">
+                                        <input id="checkbox1" name="syarat" type="checkbox">
+                                        <label for="checkbox1">
+                                          Saya mempercayai/mengenal campaigner ini dan setuju dengan <a style="color:#d6fc2f" href="<?=base_url()?>"> Syarat & Ketentuan Donasi</a> di Ayo Berbagi.
+                                        </label>
+                                    </div>
+                                    </div>
+
+                    </div>
+                    <div class="col text-center">
+                        <input type="submit" class="btn btn-simple btn-round btn-white btn-lg" value="Lanjut">
+                    </div>
+                  </form>
                 </div>
-              </div>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      ";
-    }else{
-      echo "<div class='section section-signup' style='background-image: url(".base_url()."/assets/img/img5.jpg); background-size: cover; background-position: top center; min-height: 700px;'>
-                   <div class='container'>
-                       <div class='row'>
-                           <div class='card card-signup' data-background-color='violet'>
-                               <form class='form' method='POST' action='".base_url()."Kampanye/newKampanye' enctype='multipart/form-data' autocomplete='off'>
-                                   <div class='header text-center'>
-                                       <h4 class='title title-up'>Buat Kampanye</h4>
-                                   </div>
-                                   <div class='card-body'>
-                                       <div class='input-group form-group-no-border'>
-                                           <span class='input-group-addon'>
-                                               <i class='now-ui-icons users_circle-08'></i>
-                                           </span>
-                                           <input type='text' id='namaKampanye' name='namaKampanye' class='form-control' placeholder='Nama Kampanye'>
-                                       </div>
-                                       <div class='input-group form-group-no-border'>
-                                           <span class='input-group-addon'>
-                                               <i class='now-ui-icons files_single-copy-04'></i>
-                                           </span>
-                                       <textarea placeholder='Deskripsi' id='Deskripsi' name='Deskripsi' rows='5' cols='10' class='form-control'> </textarea>
-
-                                           <!--input type='text' placeholder='Deskripsi' class='form-control' />
-                                       </div>-->
-                                       <!-- If you want to add a checkbox to this form, uncomment this code -->
-                                       <!-- <div class='checkbox'>
-                                       <input id='checkboxSignup' type='checkbox'>
-                                           <label for='checkboxSignup'>
-                                           Unchecked
-                                           </label>
-                                       </div> -->
-                                       </div>
-                                       <div class='input-group form-group-no-border'>
-                                           <span class='input-group-addon'>
-                                               <i class='now-ui-icons ui-1_calendar-60'></i>
-                                           </span>
-                                           <input type='text' id='i_tanggal_berakhir' name='i_tanggal_berakhir' class='form-control' placeholder='YYYY-MM-DD'>
-                                       </div>
-
-                                   <div class='social-line'>
-                                     <h6 class='title title-up'>Jenis Kampanye</h6>
-                                     <select name='jenisKampanye' class='form-control'>
-                                       <option value='BD'>Berbagi Dana</option>
-                                       <option value='BB'>Berbagi Barang</option>
-                                     </select>
-                                   </div>
-
-                                   <div class='footer text-left'>
-                                       <input type='file' name='userfile' value='Unggah File' class='btn btn-neutral btn-round btn-mini'>
-                                   </div>
-                                   <div class='footer text-center'>
-                                       <input type='submit' class='btn btn-neutral btn-round btn-lg' name='upload' value='Kirim'>
-                                   </div>
-                               </form>
-                           </div>
-                       </div>
-
-                   </div>
-               </div>
-               </div>";
-    } ?>
+            </div>
 
 
 <!--
@@ -182,32 +156,14 @@
                             </nav>
                         </div>
                     </div>
- -->
- <!-- <div class="modal fade" id="change-foto-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
- <div class="modal-dialog">
- <div class="modal-content">
- <div class="modal-header">
- <h1>Pilih file anda </h1><br>
- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
- </div>
- <form class="form" action="<?=base_url()?>index.php/Kampanye/uploadfile" method="post" enctype="multipart/form-data" autocomplete="off">
- <div class='form-group'>
- <label>Ambil file anda </label>
- <div class='col-xs-10'>
-   <input type="file" class='form-control' name="inputFile" accept=".gif, .jpg, .png" required />
- </div>
- </div>
- <!-- <hr> -->
- <!-- <input type="submit" name="login" class="login loginmodal-submit" value="OK"> -->
- <!-- <div class="modal-footer">
- <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
- <button type="submit" name="login" class="login" class="btn btn-info btn-simple">Upload</button>
- </div>
- </form>
+ -->        </div>
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
 
- </div>
- </div>
- </div> -->
 
         <!--  End Modal -->
         <footer class="footer" data-background-color="violet">

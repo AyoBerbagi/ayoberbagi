@@ -27,7 +27,7 @@
                 <img src="<?=base_url()?>assets/img/ayoberbagi.png" alt="" style="height: 100px;width: 150px;margin-top: -40px;margin-bottom: -50px;">
               </a>
           </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+          <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="<?=base_url()?>/assets/img/blurred-image-1.jpg">
               <ul class="navbar-nav">
                   <li class="nav-item">
                       <a class="nav-link" href="<?=base_url()?>" >
@@ -44,15 +44,10 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="<?=base_url()?>berbagiDana">Donasi </a>
                       <a class="dropdown-item" href="<?=base_url()?>BerbagiBarang">Berbagi Barang</a>
-                      <a class="dropdown-item" href="<?=base_url()?>timSukarelawan">Aksi Sosial</a>
+                      <a class="dropdown-item" href="<?=base_url()?>AksiSosial">Aksi Sosial</a>
                       <a class="dropdown-item" href="<?=base_url()?>Kampanye">Kampanye Baru</a>
                     </div>
                   </li>
-                   <!-- <li class="nav-item">
-                    <div class="">
-                      <a class="nav-link" href="<?=base_url()?>index.php/LogOut"><i class="now-ui-icons users_single-02" aria-hidden="true"></i>Log Out</a>
-                    </div>
-                  </li> -->
                   <?php if($this->session->has_userdata('login')){
                     echo "<li class='nav-item dropdown'>
                       <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -74,8 +69,7 @@
                 </div>
               </div>
           </nav>
-          
-    <!-- End Navbar -->
+           <!-- End Navbar -->
    <div class="section section-signup" style="background-image: url('<?=base_url()?>/assets/img/profil.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
                 <div class="container">
                   <?php foreach ($infoUser as $key => $user) {
@@ -86,38 +80,49 @@
                            <div class="col-sm-2">
                                 <p class="category">Profil Saya</p> <br>
                                 <?php echo" <img src='".base_url()."assets/upload/".$user['foto']."' alt='Foto Profil' class='rounded'>" ?>
-                            </div> <br>
-
+                            </div>
                             <button type="button" name="inputFoto" id="inputFoto" class="btn btn-primary" style="min-width: 20%;" data-toggle="modal" data-target="#change-foto-modal">
                                 Ganti Foto Profil
                             </button>
-
                             <br>
-
                              <br>
-                             <form class="form" action="<?=base_url()?>index.php/profil/edit" method="POST">
-                               Nama
+                             <form class="form" action="<?=base_url()?>profil/edit" method="POST">
+                               <label>Nama</label>
                                  <div class="form-group">
                                        <?php echo "<input type='text' value='".$user['u_namab']."' class='form-control' readonly />" ?>
                                    </div>
-                               E-mail
+                               <label>E - mail</label>
                                <div class="form-group">
                                        <?php echo "<input type='text' value='".$user['u_email']."' class='form-control' readonly />" ?>
                                    </div>
-                               Nomor Telepon
+                               <label>Nomor Telepon</label>
                                <div class="form-group">
                                         <?php echo "<input type='text' name='nope' value='".$user['u_nope']."' class='form-control' placeholder='0852xxxxyyyy'  />" ?>
                                    </div>
-                               Lokasi
+                               <label>Lokasi</label>
                                <div class="form-group">
                                  <?php echo "<input type='text' name='lokasi' value='".$user['u_lokasi']."' class='form-control' placeholder='Jalan xxx Kecamatan xxx Kabupaten xxx Provinsi xxx Kode Pos xxx'  />" ?>
                                 </div>
                                <br>
-                               <button type="submit" class="btn btn-primary">
+                               <button type="submit" class="btn btn-success">
                                    Simpan Perubahan
                                </button>
+                               <a
+                                   href="javascript:;"
+                                   data-toggle="modal" data-target="#edit-transaksi">
+                                   <button  data-toggle="modal" data-target="#ubah-data" class="btn btn-info">Lihat Status Transaksi Donasi</button>
+                               </a>
+                               <a
+                                   href="javascript:;"
+                                   data-toggle="modal" data-target="#edit-aksi">
+                                   <button  data-toggle="modal" data-target="#ubah-data" class="btn btn-info">Lihat Informasi Pengabdian Masyarakat</button>
+                               </a>
+                               <a
+                                   href="javascript:;"
+                                   data-toggle="modal" data-target="#edit-transaksi2">
+                                   <button  data-toggle="modal" data-target="#ubah-data" class="btn btn-info">Lihat Status Transaksi Barang</button>
+                               </a>
                              </form>
-
                         </div>
                     </div>
                 </div>
@@ -137,7 +142,7 @@
         <h1>Choose your foto </h1><br>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
-      <form class="form" action="<?=base_url()?>index.php/profil/changeFoto" method="post" enctype="multipart/form-data" autocomplete="off">
+      <form class="form" action="<?=base_url()?>profil/changeFoto" method="post" enctype="multipart/form-data" autocomplete="off">
         <div class='form-group'>
           <label>Select your foto </label>
           <div class='col-xs-10'>
@@ -155,6 +160,151 @@
     </div>
   </div>
 </div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-aksi" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Status Pengabdian Masyarakat</h4>
+            </div>
+            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data" role="form">
+              <?php if($pengabdian==null){
+                echo "<div class='col-lg-10'>
+                <div class='input-group form-group-no-border'>
+                    <input type='text' class='form-control' id='id' name='id' value='Tidak ada pengabdian yang anda ingin ikuti' readonly>
+                </div>
+                </div>";
+              }else{
+                foreach ($pengabdian as $key => $value) {
+                  echo "<div class='modal-body'>
+    	                    <div class='form-group'>
+                              <div class='col-lg-10'>
+                              <div class='input-group form-group-no-border'>
+                                  <span class='input-group-addon'>
+                                      <i>ID</i>
+                                  </span>
+                                  <input type='text' class='form-control' id='id' name='id' value='".$value['id_aksisosial']."' readonly>
+                              </div>
+                              </div>
+                              <br>
+                              <div class='col-lg-10'>
+                              <div class='input-group form-group-no-border'>
+                                  <span class='input-group-addon'>
+                                      <i class='now-ui-icons shopping_delivery-fast'></i>
+                                  </span>
+                                  <input type='text' class='form-control' value='".$value['aks_status']."' id='nama' name='nama'readonly>
+                              </div>
+    	                        </div>
+    	                    </div>
+    	                </div>
+    	                ";
+                 ?>
+                  <?php }
+              }?>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-danger" data-dismiss="modal"> Tutup</button>
+	                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-transaksi" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Status Transaksi</h4>
+            </div>
+            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data" role="form">
+              <?php if($transaksi==null){
+                echo "<div class='col-lg-10'>
+                <div class='input-group form-group-no-border'>
+                    <input type='text' class='form-control' id='id' name='id' value='Tidak ada Transaksi yang berlangsung saat ini' readonly>
+                </div>
+                </div>";
+              }else{
+              foreach ($transaksi as $key => $value) {
+                echo "<div class='modal-body'>
+  	                    <div class='form-group'>
+                            <div class='col-lg-10'>
+                            <div class='input-group form-group-no-border'>
+                                <span class='input-group-addon'>
+                                    <i>ID</i>
+                                </span>
+                                <input type='text' class='form-control' id='id' name='id' value='".$value['id_kampanye']."' readonly>
+                            </div>
+                            </div>
+                            <br>
+                            <div class='col-lg-10'>
+                            <div class='input-group form-group-no-border'>
+                                <span class='input-group-addon'>
+                                    <i class='now-ui-icons shopping_delivery-fast'></i>
+                                </span>
+                                <input type='text' class='form-control' value='".$value['bd_status']."' id='nama' name='nama'readonly>
+                            </div>
+  	                        </div>
+  	                    </div>
+  	                </div>
+  	                ";
+               }?>
+                <?php } ?>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-danger' data-dismiss='modal'> Tutup</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-transaksi2" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Status Transaksi Barang</h4>
+            </div>
+            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data" role="form">
+              <?php if($transaksi2==null){
+                echo "<div class='col-lg-10'>
+                <div class='input-group form-group-no-border'>
+                    <input type='text' class='form-control' id='id' name='id' value='Tidak ada Transaksi yang berlangsung saat ini' readonly>
+                </div>
+                </div>";
+              }else{
+              foreach ($transaksi2 as $key => $value) {
+                echo "<div class='modal-body'>
+  	                    <div class='form-group'>
+                            <div class='col-lg-10'>
+                            <div class='input-group form-group-no-border'>
+                                <span class='input-group-addon'>
+                                    <i>ID</i>
+                                </span>
+                                <input type='text' class='form-control' id='id' name='id' value='".$value['id_kampanye']."' readonly>
+                            </div>
+                            </div>
+                            <br>
+                            <div class='col-lg-10'>
+                            <div class='input-group form-group-no-border'>
+                                <span class='input-group-addon'>
+                                    <i class='now-ui-icons shopping_delivery-fast'></i>
+                                </span>
+                                <input type='text' class='form-control' value='".$value['bb_status']."' id='nama' name='nama'readonly>
+                            </div>
+  	                        </div>
+  	                    </div>
+  	                </div>
+  	                ";
+               }?>
+                <?php } ?>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-danger' data-dismiss='modal'> Tutup</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
         <!--  End Modal -->
@@ -169,22 +319,21 @@
                         adalah website untuk berdonasi dana , barang dan penghubung untuk melakukan aksi sosial secara online.  </p>
                         </div>
                         </div>
-                        <div class= "col-md-3"><button class="btn">Bentuk Donasi</button>
-                        <p class="category">Bebagi Donasi </p>
-                        <p class="category">Bebagi Barang </p>
-                        <p class="category">Aksi Sosial </p>
-                        <p class="category">Pengabdian Masyarakat </p>
+                        <div class= "col-md-3"><label>Bentuk Donasi</label>
+                        <p class="category"><a href="<?=base_url()?>BerbagiDana">Bebagi Donasi </p>
+                        <p class="category"><a href="<?=base_url()?>BerbagiBarang">Bebagi Barang </p>
+                        <p class="category"><a href="<?=base_url()?>AksiSosial">Aksi Sosial </p>
                         </div>
-                        <div class="col-md-3 col-lg-3"><button class="btn btn-primary">Pelajari Lebih Lanjut</button>
-                        <p class="category">Tentang Kami </p>
+                        <div class="col-md-3 col-lg-3"><label>Pelajari Lebih Lanjut</label>
+                        <p class="category"><a href="<?=base_url()?>SK">Syarat dan Ketentuan </p>
                         <p class="category"><a href="<?=base_url()?>FAQ">F.A.Q</a></p>
-                        <p class="category">Bantuan </p>
-                        <p class="category">Tim Sukarelawan </p>
+                        <p class="category"><a href="<?=base_url()?>Bantuan">Bantuan </p>
+                        <p class="category"><a href="<?=base_url()?>TimSukarelawan">Tim Sukarelawan </p>
                         </div>
-                        <div class="col-md-3"><button class="btn btn-info">Kontak Bantuan</button>
-                        <p class="category">082304480707 </p>
-                        <p class="category">ayo.berbagi@gmail.com </p>
-                        <p class="category">Institut Teknologi Sumatera </p>
+                        <div class="col-md-3"><label>Kontak Bantuan</label>
+                        <p class="category"><a href="#">082304480707 </p>
+                        <p class="category"><a href="#">ayo.berbagi@gmail.com </p>
+                        <p class="category"><a href="#">Institut Teknologi Sumatera </p>
                         </div>
                         </div>
 
